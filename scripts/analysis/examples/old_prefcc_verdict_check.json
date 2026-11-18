@@ -1,0 +1,66 @@
+{
+ "_comment": "Check of collect_results.py: C and prefcc on both question sets, no common-paper restriction; must reproduce the two-seed verdict of the previous project (recall +0.0262 [+0.0201, +0.0322], length 0.988, ROUGE-L -0.0053, BERTScore -0.0085, unsupported +0.0045 [-0.0003, +0.0093], NLI -0.0243, judge -0.090).",
+ "teacher": {
+  "fact_label": "teacher",
+  "claim_label": "teacher"
+ },
+ "systems": [
+  {
+   "name": "C Qwen3.5-9B 20k",
+   "student": "C",
+   "stage": "sft",
+   "runs": [
+    {
+     "run": "q35",
+     "eval": "test-ex20000-n15000",
+     "fact_label": "C",
+     "claim_label": "C"
+    }
+   ],
+   "train_runs": [
+    "q35"
+   ],
+   "serving": {
+    "papers_per_s": 0.548,
+    "gpus": 1,
+    "gpu_type": "A100 80GB",
+    "output_tokens_per_s": 527.8,
+    "source": "test evaluation run, 32,768-token window"
+   }
+  },
+  {
+   "name": "prefcc (C + DPO)",
+   "student": "C",
+   "stage": "prefcc",
+   "reference": "C Qwen3.5-9B 20k",
+   "runs": [
+    {
+     "run": "q35prefcc",
+     "eval": "test-ex1233-n1246",
+     "fact_label": "C_prefcc",
+     "claim_label": "C_prefcc"
+    },
+    {
+     "run": "q35prefccs2",
+     "eval": "test-ex1233-n1246",
+     "fact_label": "C_prefccs2",
+     "claim_label": "C_prefccs2"
+    }
+   ],
+   "train_runs": [
+    "q35",
+    "q35prefcc"
+   ],
+   "verification_runs": [
+    "q35prefccs2"
+   ],
+   "serving": {
+    "papers_per_s": 0.548,
+    "gpus": 1,
+    "gpu_type": "A100 80GB",
+    "output_tokens_per_s": 527.8,
+    "source": "assumed equal to C: same base model and adapter rank"
+   }
+  }
+ ]
+}

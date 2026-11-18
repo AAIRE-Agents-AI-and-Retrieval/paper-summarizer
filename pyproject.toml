@@ -1,0 +1,30 @@
+[build-system]
+requires = ["setuptools>=69", "wheel"]
+build-backend = "setuptools.build_meta"
+
+[project]
+name = "scisum"
+version = "0.1.0"
+description = "Train, evaluate and compare small open models as structured scientific-paper summarisers (SFT on teacher summaries, then fact-rewarded DPO), on SLURM clusters including LUMI."
+requires-python = ">=3.13"
+dependencies = []  # see requirements.in / requirements.lock.txt (installed before this package)
+
+[project.scripts]
+scisum = "scisum.cli:app"
+
+[tool.setuptools.packages.find]
+include = ["scisum*"]
+
+[tool.ruff]
+line-length = 110
+target-version = "py313"
+
+[tool.ruff.lint]
+select = ["E", "F", "I", "B", "UP", "SIM"]
+ignore = ["E501"]
+extend-per-file-ignores = { "scisum/cli.py" = ["B008"] }
+
+[tool.pytest.ini_options]
+testpaths = ["tests"]
+addopts = "-q -m \"not slow\""
+markers = ["slow: needs a model download or a GPU"]

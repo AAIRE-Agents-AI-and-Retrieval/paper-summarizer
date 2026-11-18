@@ -1,0 +1,29 @@
+# Pinned to vLLM 0.31.0's own pins (torch==2.13.0, transformers<5.18) so training and serving
+# share one environment. Python 3.13 from /usr/bin (visible on every node).
+torch==2.13.0
+vllm==0.31.0
+transformers==5.17.0
+peft==0.21.2
+# Qwen3.5's hybrid attention: without this, transformers falls back to a reference PyTorch
+# chunked gated delta rule that is both much slower and much hungrier - it OOMed the Run C
+# preflight on a 40 GB slice. Pure Python + triton, pulls in nothing else.
+flash-linear-attention==0.5.2
+accelerate==1.15.0
+numpy
+orjson
+typer
+pydantic
+pydantic-settings
+lxml
+httpx
+psutil
+matplotlib==3.11.2
+rouge-score==0.1.2
+bert-score==0.3.13
+nltk
+scipy
+hf_transfer
+huggingface_hub
+pytest
+pytest-asyncio
+ruff

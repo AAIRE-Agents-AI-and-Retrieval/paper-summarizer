@@ -1,0 +1,64 @@
+{
+ "verifier": "gemma4-31b-it",
+ "claim_weight": 1.0,
+ "papers": 1520,
+ "candidates": 9360,
+ "candidates_labelled": 8814,
+ "share_by_source": {
+  "greedy": {
+   "n": 115,
+   "mean": 0.036387175723209014,
+   "median": 0.0
+  },
+  "sampled": {
+   "n": 7268,
+   "mean": 0.04717598758558709,
+   "median": 0.038461538461538464
+  },
+  "teacher": {
+   "n": 1431,
+   "mean": 0.03112247782267553,
+   "median": 0.0
+  }
+ },
+ "pairs": {
+  "preflc_rule": {
+   "chosen": {
+    "mean_share": 0.032525593997970476,
+    "labelled": 1163,
+    "teacher_share_of_pairs": 0.7506448839208942
+   },
+   "rejected": {
+    "mean_share": 0.04950074258583203,
+    "labelled": 1163,
+    "teacher_share_of_pairs": 0.0
+   }
+  },
+  "prefcc_rule": {
+   "chosen": {
+    "mean_share": 0.02435601186890346,
+    "labelled": 1233,
+    "teacher_share_of_pairs": 0.7623682076236821
+   },
+   "rejected": {
+    "mean_share": 0.06159982568066649,
+    "labelled": 1233,
+    "teacher_share_of_pairs": 0.0
+   }
+  }
+ },
+ "preflc_vs_prefcc": {
+  "papers_with_pair": [
+   1163,
+   1233
+  ],
+  "in_both": 1144,
+  "same_pair": 897,
+  "reversed": 0,
+  "chosen_changed_only": 53,
+  "rejected_changed_only": 173,
+  "both_changed_not_reversed": 21,
+  "pair_lost": 19,
+  "pair_gained": 89
+ }
+}

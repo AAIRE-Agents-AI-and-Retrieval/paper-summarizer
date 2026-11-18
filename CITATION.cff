@@ -1,0 +1,27 @@
+cff-version: 1.2.0
+title: "SciSum: distilling a structured scientific-paper summariser into small open models"
+message: "If you use this work, please cite it."
+type: software
+authors:
+  - given-names: Mohammed
+    family-names: Al-Maamari
+    email: mohammed.al-maamari@uni-passau.de
+    orcid: "https://orcid.org/0000-0002-0127-8034"
+    affiliation: "University of Passau, Passau, Germany"
+license: Apache-2.0
+keywords:
+  - scientific summarisation
+  - knowledge distillation
+  - LoRA
+  - structured output
+  - arXiv
+abstract: >-
+  Fine-tunes three small open models with LoRA on structured eight-field summaries of the most-cited
+  arXiv papers, written by teacher LLMs from GROBID full texts: Qwen3-4B-Instruct-2507 and
+  K2-Horizon-7B on 70,000 training papers, and Qwen3.5-9B on 20,000 with a 28,672-token prompt budget.
+  Each student is measured on a 15,000-paper test split at checkpoints along training, against its
+  untrained base model and the teacher, on schema compliance, ROUGE, BERTScore, keyword F1, NLI
+  faithfulness, an independent LLM judge, a fact test with questions written from the paper, and a
+  claim check of every summary statement against the full paper. A follow-up continues the Qwen3.5-9B
+  student on reward-selected summaries and with preference tuning, to raise factual accuracy while
+  keeping it close to the teacher.

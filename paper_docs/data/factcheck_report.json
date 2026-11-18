@@ -1,0 +1,379 @@
+{
+ "n_papers": 300,
+ "question_failures": [
+  "1512.07248"
+ ],
+ "systems": {
+  "teacher": {
+   "papers": 299,
+   "questions": 2990,
+   "ungraded": 0,
+   "usable_summary": 1.0,
+   "correct": 0.509,
+   "partial": 0.2184,
+   "incorrect": 0.0418,
+   "not_stated": 0.2308,
+   "recall": 0.6182,
+   "accuracy_when_answering": 0.6617,
+   "attempted": 0.7692,
+   "recall_by_type": {
+    "approach": 0.6957,
+    "finding": 0.806,
+    "limitation": 0.6421,
+    "motivation": 0.1873,
+    "problem": 0.5217,
+    "scope": 0.4833,
+    "setup": 0.6722
+   },
+   "recall_top": {
+    "n": 269,
+    "recall": 0.6164
+   },
+   "recall_random": {
+    "n": 30,
+    "recall": 0.635
+   }
+  },
+  "A": {
+   "papers": 299,
+   "questions": 2990,
+   "ungraded": 0,
+   "usable_summary": 0.9866,
+   "correct": 0.4217,
+   "partial": 0.21,
+   "incorrect": 0.0565,
+   "not_stated": 0.3117,
+   "recall": 0.5268,
+   "accuracy_when_answering": 0.6127,
+   "attempted": 0.6883,
+   "recall_by_type": {
+    "approach": 0.6062,
+    "finding": 0.6881,
+    "limitation": 0.5184,
+    "motivation": 0.1304,
+    "problem": 0.4649,
+    "scope": 0.3997,
+    "setup": 0.5828
+   },
+   "recall_top": {
+    "n": 269,
+    "recall": 0.5236
+   },
+   "recall_random": {
+    "n": 30,
+    "recall": 0.555
+   }
+  },
+  "B": {
+   "papers": 299,
+   "questions": 2990,
+   "ungraded": 0,
+   "usable_summary": 0.9967,
+   "correct": 0.4659,
+   "partial": 0.212,
+   "incorrect": 0.0535,
+   "not_stated": 0.2686,
+   "recall": 0.5719,
+   "accuracy_when_answering": 0.6369,
+   "attempted": 0.7314,
+   "recall_by_type": {
+    "approach": 0.6614,
+    "finding": 0.7533,
+    "limitation": 0.5753,
+    "motivation": 0.1522,
+    "problem": 0.4916,
+    "scope": 0.4833,
+    "setup": 0.5936
+   },
+   "recall_top": {
+    "n": 269,
+    "recall": 0.5719
+   },
+   "recall_random": {
+    "n": 30,
+    "recall": 0.5717
+   }
+  },
+  "C": {
+   "papers": 299,
+   "questions": 2990,
+   "ungraded": 0,
+   "usable_summary": 1.0,
+   "correct": 0.4632,
+   "partial": 0.2217,
+   "incorrect": 0.0472,
+   "not_stated": 0.2679,
+   "recall": 0.5741,
+   "accuracy_when_answering": 0.6327,
+   "attempted": 0.7321,
+   "recall_by_type": {
+    "approach": 0.6647,
+    "finding": 0.7617,
+    "limitation": 0.602,
+    "motivation": 0.1555,
+    "problem": 0.4849,
+    "scope": 0.4214,
+    "setup": 0.612
+   },
+   "recall_top": {
+    "n": 269,
+    "recall": 0.5706
+   },
+   "recall_random": {
+    "n": 30,
+    "recall": 0.605
+   }
+  },
+  "A_base": {
+   "papers": 299,
+   "questions": 2990,
+   "ungraded": 0,
+   "usable_summary": 1.0,
+   "correct": 0.31,
+   "partial": 0.211,
+   "incorrect": 0.0472,
+   "not_stated": 0.4318,
+   "recall": 0.4156,
+   "accuracy_when_answering": 0.5456,
+   "attempted": 0.5682,
+   "recall_by_type": {
+    "approach": 0.5418,
+    "finding": 0.6062,
+    "limitation": 0.3779,
+    "motivation": 0.1271,
+    "problem": 0.4515,
+    "scope": 0.3261,
+    "setup": 0.2885
+   },
+   "recall_top": {
+    "n": 269,
+    "recall": 0.4128
+   },
+   "recall_random": {
+    "n": 30,
+    "recall": 0.44
+   }
+  },
+  "C_base": {
+   "papers": 299,
+   "questions": 2990,
+   "ungraded": 0,
+   "usable_summary": 0.2575,
+   "correct": 0.0639,
+   "partial": 0.0452,
+   "incorrect": 0.007,
+   "not_stated": 0.8839,
+   "recall": 0.0865,
+   "accuracy_when_answering": 0.5504,
+   "attempted": 0.1161,
+   "recall_by_type": {
+    "approach": 0.0928,
+    "finding": 0.1321,
+    "limitation": 0.0853,
+    "motivation": 0.0201,
+    "problem": 0.0886,
+    "scope": 0.0635,
+    "setup": 0.0786
+   },
+   "recall_top": {
+    "n": 269,
+    "recall": 0.0874
+   },
+   "recall_random": {
+    "n": 30,
+    "recall": 0.0783
+   }
+  },
+  "closed_book": {
+   "papers": 299,
+   "questions": 2990,
+   "ungraded": 0,
+   "usable_summary": 1.0,
+   "correct": 0.1478,
+   "partial": 0.3184,
+   "incorrect": 0.5134,
+   "not_stated": 0.0204,
+   "recall": 0.307,
+   "accuracy_when_answering": 0.1509,
+   "attempted": 0.9796,
+   "recall_by_type": {
+    "approach": 0.3654,
+    "finding": 0.2015,
+    "limitation": 0.2676,
+    "motivation": 0.4448,
+    "problem": 0.4515,
+    "scope": 0.2843,
+    "setup": 0.2441
+   },
+   "recall_top": {
+    "n": 269,
+    "recall": 0.3076
+   },
+   "recall_random": {
+    "n": 30,
+    "recall": 0.3017
+   }
+  },
+  "abstract": {
+   "papers": 299,
+   "questions": 2990,
+   "ungraded": 0,
+   "usable_summary": 1.0,
+   "correct": 0.1375,
+   "partial": 0.0967,
+   "incorrect": 0.0204,
+   "not_stated": 0.7455,
+   "recall": 0.1858,
+   "accuracy_when_answering": 0.5401,
+   "attempted": 0.2545,
+   "recall_by_type": {
+    "approach": 0.2726,
+    "finding": 0.245,
+    "limitation": 0.0301,
+    "motivation": 0.1355,
+    "problem": 0.2542,
+    "scope": 0.1605,
+    "setup": 0.1212
+   },
+   "recall_top": {
+    "n": 269,
+    "recall": 0.1829
+   },
+   "recall_random": {
+    "n": 30,
+    "recall": 0.2117
+   }
+  },
+  "full_paper": {
+   "papers": 299,
+   "questions": 2990,
+   "ungraded": 0,
+   "usable_summary": 1.0,
+   "correct": 0.7973,
+   "partial": 0.1742,
+   "incorrect": 0.0234,
+   "not_stated": 0.005,
+   "recall": 0.8844,
+   "accuracy_when_answering": 0.8013,
+   "attempted": 0.995,
+   "recall_by_type": {
+    "approach": 0.8712,
+    "finding": 0.9114,
+    "limitation": 0.8779,
+    "motivation": 0.8278,
+    "problem": 0.8896,
+    "scope": 0.8612,
+    "setup": 0.9114
+   },
+   "recall_top": {
+    "n": 269,
+    "recall": 0.8848
+   },
+   "recall_random": {
+    "n": 30,
+    "recall": 0.8817
+   }
+  }
+ },
+ "n_common": 299,
+ "recall_minus_teacher": {
+  "A": {
+   "mean": -0.0915,
+   "ci95": [
+    -0.1082,
+    -0.0758
+   ]
+  },
+  "B": {
+   "mean": -0.0463,
+   "ci95": [
+    -0.0619,
+    -0.0311
+   ]
+  },
+  "C": {
+   "mean": -0.0441,
+   "ci95": [
+    -0.0579,
+    -0.0304
+   ]
+  },
+  "A_base": {
+   "mean": -0.2027,
+   "ci95": [
+    -0.2181,
+    -0.1876
+   ]
+  },
+  "C_base": {
+   "mean": -0.5318,
+   "ci95": [
+    -0.557,
+    -0.5062
+   ]
+  },
+  "closed_book": {
+   "mean": -0.3112,
+   "ci95": [
+    -0.3336,
+    -0.2896
+   ]
+  },
+  "abstract": {
+   "mean": -0.4324,
+   "ci95": [
+    -0.4512,
+    -0.413
+   ]
+  },
+  "full_paper": {
+   "mean": 0.2662,
+   "ci95": [
+    0.2465,
+    0.2851
+   ]
+  }
+ },
+ "paired": {
+  "A - A_base": {
+   "n": 299,
+   "mean": 0.1112,
+   "ci95": [
+    0.0945,
+    0.1273
+   ]
+  },
+  "B - A": {
+   "n": 299,
+   "mean": 0.0452,
+   "ci95": [
+    0.0311,
+    0.0599
+   ]
+  },
+  "C - A": {
+   "n": 299,
+   "mean": 0.0473,
+   "ci95": [
+    0.0328,
+    0.062
+   ]
+  },
+  "C - B": {
+   "n": 299,
+   "mean": 0.0022,
+   "ci95": [
+    -0.0124,
+    0.0174
+   ]
+  },
+  "C - C_base": {
+   "n": 299,
+   "mean": 0.4876,
+   "ci95": [
+    0.4634,
+    0.5127
+   ]
+  }
+ }
+}

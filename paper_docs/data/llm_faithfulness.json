@@ -1,0 +1,138 @@
+{
+ "papers": 60,
+ "reader": "frontier LLM (agent CLI)",
+ "systems": {
+  "teacher": {
+   "statements": 32.1667,
+   "unsupported": 0.6833,
+   "major": 0.1167,
+   "contradicted": 0.1667,
+   "share": 0.0224,
+   "major_share": 0.0041
+  },
+  "C": {
+   "statements": 28.7333,
+   "unsupported": 1.55,
+   "major": 0.55,
+   "contradicted": 0.75,
+   "share": 0.0544,
+   "major_share": 0.0191
+  },
+  "C_preflc": {
+   "statements": 31.1333,
+   "unsupported": 2.05,
+   "major": 0.8667,
+   "contradicted": 1.1833,
+   "share": 0.066,
+   "major_share": 0.028
+  },
+  "C_prefcc": {
+   "statements": 30.9833,
+   "unsupported": 1.8833,
+   "major": 0.8167,
+   "contradicted": 1.15,
+   "share": 0.0625,
+   "major_share": 0.0271
+  }
+ },
+ "vs_C": {
+  "teacher": {
+   "unsupported": {
+    "mean_diff": -0.8667,
+    "ci95": [
+     -1.2667,
+     -0.4833
+    ]
+   },
+   "major": {
+    "mean_diff": -0.4333,
+    "ci95": [
+     -0.6333,
+     -0.25
+    ]
+   },
+   "share": {
+    "mean_diff": -0.0319,
+    "ci95": [
+     -0.0459,
+     -0.0186
+    ]
+   },
+   "major_share": {
+    "mean_diff": -0.015,
+    "ci95": [
+     -0.0226,
+     -0.0082
+    ]
+   }
+  },
+  "C_preflc": {
+   "unsupported": {
+    "mean_diff": 0.5,
+    "ci95": [
+     0.0833,
+     0.9333
+    ]
+   },
+   "major": {
+    "mean_diff": 0.3167,
+    "ci95": [
+     0.0667,
+     0.5833
+    ]
+   },
+   "share": {
+    "mean_diff": 0.0116,
+    "ci95": [
+     -0.0012,
+     0.0243
+    ]
+   },
+   "major_share": {
+    "mean_diff": 0.0089,
+    "ci95": [
+     0.0008,
+     0.017
+    ]
+   }
+  },
+  "C_prefcc": {
+   "unsupported": {
+    "mean_diff": 0.3333,
+    "ci95": [
+     -0.0333,
+     0.7167
+    ]
+   },
+   "major": {
+    "mean_diff": 0.2667,
+    "ci95": [
+     0.0,
+     0.5333
+    ]
+   },
+   "share": {
+    "mean_diff": 0.0081,
+    "ci95": [
+     -0.0039,
+     0.0209
+    ]
+   },
+   "major_share": {
+    "mean_diff": 0.0081,
+    "ci95": [
+     -0.001,
+     0.0173
+    ]
+   }
+  }
+ },
+ "prefcc_minus_preflc_share": {
+  "mean_diff": -0.0035,
+  "ci95": [
+   -0.0161,
+   0.0097
+  ]
+ },
+ "cost_equiv_usd_total": 27.02
+}

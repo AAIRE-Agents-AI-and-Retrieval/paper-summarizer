@@ -1,0 +1,28 @@
+# Copy to slurm/site/local.sh (git-ignored) and fill in. Sourced before the site file by every job and by
+# scripts/pipeline.py, so anything set here overrides the site's defaults.
+
+# --- LUMI -------------------------------------------------------------------------------------------
+# LUMI_PROJECT=project_XXXXXXXXX                                # your project; also the sbatch --account
+# SUM_SIF=/scratch/$LUMI_PROJECT/containers/scisum-rocm.sif     # runtime image (containers/lumi/README.md)
+# SUM_VENV=/scratch/$LUMI_PROJECT/containers/scisum-venv        # overlay venv made by containers/lumi/setup_runtime.sh
+# SCISUM_DATA_ROOT=/scratch/$LUMI_PROJECT/scisum-data           # only if data/ is not inside the repository
+# SUM_CACHE_ROOT=/scratch/$LUMI_PROJECT/scisum-cache            # HF cache, Triton/vLLM caches (default: <repo>/.cache)
+# SUM_TRAIN_GPUS=8            # GCDs per training job (1, 2, 4 or 8); 8 uses standard-g, fewer use small-g
+# SUM_TRAIN_TIME=24:00:00     # per training chunk; the chain resubmits itself until the run is finished
+# SUM_GRADER_GPUS=4           # GCDs per grader server (tensor parallel); 4 x 64 GB fits a 27-31 B model in bf16
+
+# --- a CUDA cluster ------------------------------------------------------------------------------------
+# SUM_ACCOUNT=myproject
+# SUM_GPU_PARTITION=gpu
+# SUM_GPU_CONSTRAINT=gpumem.48gib     # optional node feature
+# SUM_TRAIN_GPUS=2
+# SUM_CPU_PARTITION=short
+# SUM_CPU_BIG_PARTITION=general
+# SUM_GRADER_MODE=external            # use the endpoint in .env (SCISUM_JUDGE_BASE / SCISUM_GRADER_ENDPOINTS)
+
+# --- graders (both sites) ---------------------------------------------------------------------------------
+# SUM_GRADER_HF_QWEN=Qwen/Qwen3.8-27B
+# SUM_GRADER_HF_GEMMA=google/gemma-4-31B-it
+# SUM_GRADER_MAX_LEN=40960
+# SUM_GRADER_ARGS_QWEN="--reasoning-parser qwen3"
+# SUM_GRADER_ARGS_GEMMA=""

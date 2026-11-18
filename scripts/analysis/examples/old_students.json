@@ -1,0 +1,27 @@
+{
+ "_comment": "Worked example on the PREVIOUS project's students (A, B: 70,000 SFT papers; C: 20,000; prefcc = C + DPO), not the new 50k runs. Serving rates are from each test evaluation run (different GPUs and context windows), so costs are not like-for-like. Paths are resolved against --runs-dir / --state-dir.",
+ "teacher": {"fact_label": "teacher", "claim_label": "teacher"},
+ "systems": [
+  {"name": "A Qwen3-4B 70k", "student": "A", "stage": "sft",
+   "runs": [{"run": "main", "eval": "test-ex70000-n15000", "fact_label": "A", "claim_label": "A"}],
+   "train_runs": ["main"],
+   "serving": {"papers_per_s": 1.438, "gpus": 1, "gpu_type": "H200", "output_tokens_per_s": 1407.3,
+               "source": "test evaluation run, 15,000 papers, 16,640-token window"}},
+  {"name": "B K2-Horizon-7B 70k", "student": "B", "stage": "sft",
+   "runs": [{"run": "k2", "eval": "test-ex70000-n15000", "fact_label": "B", "claim_label": "B"}],
+   "train_runs": ["k2"],
+   "serving": {"papers_per_s": 1.124, "gpus": 1, "gpu_type": "H200", "output_tokens_per_s": 1041.9,
+               "source": "test evaluation run, 15,000 papers, 16,640-token window"}},
+  {"name": "C Qwen3.5-9B 20k", "student": "C", "stage": "sft",
+   "runs": [{"run": "q35", "eval": "test-ex20000-n15000", "fact_label": "C", "claim_label": "C"}],
+   "train_runs": ["q35"],
+   "serving": {"papers_per_s": 0.548, "gpus": 1, "gpu_type": "A100 80GB", "output_tokens_per_s": 527.8,
+               "source": "test evaluation run, 32,768-token window"}},
+  {"name": "prefcc (C + DPO)", "student": "C", "stage": "prefcc", "reference": "C Qwen3.5-9B 20k",
+   "runs": [{"run": "q35prefcc", "eval": "test-ex1233-n1246", "fact_label": "C_prefcc", "claim_label": "C_prefcc"},
+            {"run": "q35prefccs2", "eval": "test-ex1233-n1246", "fact_label": "C_prefccs2", "claim_label": "C_prefccs2"}],
+   "train_runs": ["q35", "q35prefcc"], "verification_runs": ["q35prefccs2"],
+   "serving": {"papers_per_s": 0.548, "gpus": 1, "gpu_type": "A100 80GB", "output_tokens_per_s": 527.8,
+               "source": "assumed equal to C: same base model and adapter rank"}}
+ ]
+}

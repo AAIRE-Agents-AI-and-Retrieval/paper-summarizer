@@ -1,0 +1,31 @@
+# What the pipeline needs on top of a runtime image that already provides PyTorch, vLLM and Triton
+# (the LUMI ROCm images, or any vLLM image). Installed into an overlay venv created with
+# --system-site-packages, so torch/vllm/triton come from the image and are never reinstalled.
+#
+# The versions are the ones the recipe was developed with on CUDA (requirements.lock.txt). transformers must
+# stay inside the range the image's vLLM accepts: after installing, run `pip check` in the venv and, if vLLM
+# complains, pin transformers to the image's own version instead (the code needs >= 5.17 for Qwen3.5 and
+# K2-Horizon remote code; check docs/STUDENTS.md).
+transformers==5.17.0
+peft==0.21.2
+accelerate==1.15.0
+# Qwen3.5's linear attention (Triton kernels). Without it transformers falls back to a slow reference path
+# that ran out of memory at long context. Pure Python + Triton; on ROCm it needs the image's Triton.
+flash-linear-attention==0.5.2
+numpy
+orjson
+typer
+pydantic
+pydantic-settings
+lxml
+httpx
+openai
+psutil
+matplotlib==3.11.2
+rouge-score==0.1.2
+bert-score==0.3.13
+nltk
+scipy
+huggingface_hub
+pytest
+pytest-asyncio

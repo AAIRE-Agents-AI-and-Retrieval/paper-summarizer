@@ -1,0 +1,509 @@
+{
+ "fact_paper_chars": 90000,
+ "by_cut": {
+  "qwen38-27b": {
+   "C_ctl - C, uncut": {
+    "papers": 273,
+    "unsupported": [
+     0.1209,
+     0.011,
+     0.2271
+    ],
+    "contradicted": [
+     0.1282,
+     0.0293,
+     0.2234
+    ],
+    "supported_share": [
+     -0.0065,
+     -0.0117,
+     -0.0009
+    ]
+   },
+   "C_ctl - C, cut": {
+    "papers": 26,
+    "unsupported": [
+     0.2308,
+     -0.3846,
+     0.8846
+    ],
+    "contradicted": [
+     0.0,
+     -0.3077,
+     0.2692
+    ],
+    "supported_share": [
+     -0.0057,
+     -0.0339,
+     0.0227
+    ]
+   },
+   "C_pref - C, uncut": {
+    "papers": 272,
+    "unsupported": [
+     0.375,
+     0.239,
+     0.5147
+    ],
+    "contradicted": [
+     0.2831,
+     0.1507,
+     0.4081
+    ],
+    "supported_share": [
+     -0.0113,
+     -0.0171,
+     -0.0054
+    ]
+   },
+   "C_pref - C, cut": {
+    "papers": 25,
+    "unsupported": [
+     1.28,
+     0.6,
+     2.08
+    ],
+    "contradicted": [
+     0.24,
+     -0.16,
+     0.68
+    ],
+    "supported_share": [
+     -0.021,
+     -0.0483,
+     0.0032
+    ]
+   },
+   "C_prefcc - C, uncut": {
+    "papers": 273,
+    "unsupported": [
+     0.0293,
+     -0.0916,
+     0.1392
+    ],
+    "contradicted": [
+     0.0293,
+     -0.0696,
+     0.1245
+    ],
+    "supported_share": [
+     -0.0011,
+     -0.0062,
+     0.0045
+    ]
+   },
+   "C_prefcc - C, cut": {
+    "papers": 26,
+    "unsupported": [
+     -0.1154,
+     -0.5385,
+     0.3462
+    ],
+    "contradicted": [
+     -0.1154,
+     -0.4615,
+     0.3077
+    ],
+    "supported_share": [
+     0.0086,
+     -0.0109,
+     0.0281
+    ]
+   },
+   "C_preflc - C, uncut": {
+    "papers": 273,
+    "unsupported": [
+     0.1245,
+     0.0,
+     0.2564
+    ],
+    "contradicted": [
+     0.1245,
+     0.0147,
+     0.2454
+    ],
+    "supported_share": [
+     -0.0062,
+     -0.0121,
+     -0.0002
+    ]
+   },
+   "C_preflc - C, cut": {
+    "papers": 26,
+    "unsupported": [
+     0.7308,
+     0.1154,
+     1.4231
+    ],
+    "contradicted": [
+     0.2308,
+     -0.1154,
+     0.6538
+    ],
+    "supported_share": [
+     -0.0321,
+     -0.06,
+     -0.006
+    ]
+   },
+   "C_preflcrd - C, uncut": {
+    "papers": 273,
+    "unsupported": [
+     0.0879,
+     -0.0366,
+     0.2051
+    ],
+    "contradicted": [
+     0.0989,
+     -0.011,
+     0.2051
+    ],
+    "supported_share": [
+     -0.0095,
+     -0.0155,
+     -0.0031
+    ]
+   },
+   "C_preflcrd - C, cut": {
+    "papers": 27,
+    "unsupported": [
+     0.0741,
+     -0.5556,
+     0.7407
+    ],
+    "contradicted": [
+     0.1852,
+     -0.2222,
+     0.6667
+    ],
+    "supported_share": [
+     -0.0212,
+     -0.0581,
+     0.0101
+    ]
+   },
+   "C_preflcrd3 - C, uncut": {
+    "papers": 273,
+    "unsupported": [
+     0.1026,
+     -0.0147,
+     0.2125
+    ],
+    "contradicted": [
+     0.1062,
+     0.0,
+     0.2125
+    ],
+    "supported_share": [
+     -0.0069,
+     -0.012,
+     -0.0013
+    ]
+   },
+   "C_preflcrd3 - C, cut": {
+    "papers": 26,
+    "unsupported": [
+     0.2308,
+     -0.3077,
+     0.8462
+    ],
+    "contradicted": [
+     0.0769,
+     -0.3077,
+     0.5
+    ],
+    "supported_share": [
+     -0.0335,
+     -0.0783,
+     0.0007
+    ]
+   },
+   "C_preflcs2 - C, uncut": {
+    "papers": 272,
+    "unsupported": [
+     0.0919,
+     -0.0184,
+     0.2059
+    ],
+    "contradicted": [
+     0.0662,
+     -0.0368,
+     0.1654
+    ],
+    "supported_share": [
+     -0.0054,
+     -0.0109,
+     -0.0001
+    ]
+   },
+   "C_preflcs2 - C, cut": {
+    "papers": 24,
+    "unsupported": [
+     0.75,
+     0.0833,
+     1.625
+    ],
+    "contradicted": [
+     0.0833,
+     -0.3333,
+     0.5833
+    ],
+    "supported_share": [
+     -0.0331,
+     -0.0663,
+     -0.0043
+    ]
+   },
+   "C_prefrd - C, uncut": {
+    "papers": 273,
+    "unsupported": [
+     0.0659,
+     -0.0586,
+     0.1795
+    ],
+    "contradicted": [
+     0.0513,
+     -0.0659,
+     0.1648
+    ],
+    "supported_share": [
+     -0.0057,
+     -0.0113,
+     0.0003
+    ]
+   },
+   "C_prefrd - C, cut": {
+    "papers": 27,
+    "unsupported": [
+     0.0741,
+     -0.5185,
+     0.6667
+    ],
+    "contradicted": [
+     0.2963,
+     -0.1111,
+     0.7407
+    ],
+    "supported_share": [
+     -0.0057,
+     -0.03,
+     0.0205
+    ]
+   },
+   "C_prefrds2 - C, uncut": {
+    "papers": 272,
+    "unsupported": [
+     0.136,
+     0.0184,
+     0.25
+    ],
+    "contradicted": [
+     0.1471,
+     0.0515,
+     0.2426
+    ],
+    "supported_share": [
+     -0.0123,
+     -0.0183,
+     -0.0059
+    ]
+   },
+   "C_prefrds2 - C, cut": {
+    "papers": 27,
+    "unsupported": [
+     0.2963,
+     -0.2963,
+     0.9259
+    ],
+    "contradicted": [
+     0.0,
+     -0.3333,
+     0.3333
+    ],
+    "supported_share": [
+     -0.0343,
+     -0.0636,
+     -0.005
+    ]
+   },
+   "C_rft - C, uncut": {
+    "papers": 273,
+    "unsupported": [
+     0.0256,
+     -0.0916,
+     0.1392
+    ],
+    "contradicted": [
+     0.022,
+     -0.0806,
+     0.1245
+    ],
+    "supported_share": [
+     -0.0013,
+     -0.0066,
+     0.0042
+    ]
+   },
+   "C_rft - C, cut": {
+    "papers": 27,
+    "unsupported": [
+     -0.1852,
+     -0.6667,
+     0.3333
+    ],
+    "contradicted": [
+     0.1111,
+     -0.2222,
+     0.4815
+    ],
+    "supported_share": [
+     0.0162,
+     -0.0079,
+     0.0408
+    ]
+   },
+   "teacher - C, uncut": {
+    "papers": 273,
+    "unsupported": [
+     -0.2308,
+     -0.3516,
+     -0.1062
+    ],
+    "contradicted": [
+     -0.2234,
+     -0.3297,
+     -0.1172
+    ],
+    "supported_share": [
+     0.01,
+     0.0042,
+     0.0158
+    ]
+   },
+   "teacher - C, cut": {
+    "papers": 27,
+    "unsupported": [
+     0.7778,
+     0.0,
+     1.7037
+    ],
+    "contradicted": [
+     -0.1852,
+     -0.5185,
+     0.1852
+    ],
+    "supported_share": [
+     -0.0531,
+     -0.1047,
+     -0.0083
+    ]
+   }
+  },
+  "gemma4-31b-it": {
+   "C_pref - C, uncut": {
+    "papers": 135,
+    "unsupported": [
+     0.1333,
+     -0.0444,
+     0.2963
+    ],
+    "contradicted": [
+     0.2,
+     0.037,
+     0.3556
+    ],
+    "supported_share": [
+     -0.0011,
+     -0.0082,
+     0.0074
+    ]
+   },
+   "C_pref - C, cut": {
+    "papers": 14,
+    "unsupported": [
+     2.0,
+     1.0714,
+     3.0
+    ],
+    "contradicted": [
+     0.2857,
+     -0.0714,
+     0.7143
+    ],
+    "supported_share": [
+     -0.0489,
+     -0.0846,
+     -0.0152
+    ]
+   },
+   "teacher - C, uncut": {
+    "papers": 135,
+    "unsupported": [
+     -0.2,
+     -0.3778,
+     -0.0148
+    ],
+    "contradicted": [
+     -0.2667,
+     -0.4074,
+     -0.1333
+    ],
+    "supported_share": [
+     0.0086,
+     -0.0003,
+     0.0172
+    ]
+   },
+   "teacher - C, cut": {
+    "papers": 15,
+    "unsupported": [
+     0.6667,
+     -0.7333,
+     2.1333
+    ],
+    "contradicted": [
+     -0.1333,
+     -0.4,
+     0.1333
+    ],
+    "supported_share": [
+     -0.0565,
+     -0.14,
+     0.0188
+    ]
+   }
+  }
+ },
+ "agreement": {
+  "C": {
+   "statements": 3255,
+   "agreement": 0.9714,
+   "kappa": 0.5982
+  },
+  "C_pref": {
+   "statements": 3851,
+   "agreement": 0.9662,
+   "kappa": 0.6068
+  },
+  "other_paper": {
+   "statements": 861,
+   "agreement": 0.9965,
+   "kappa": 0.5704
+  },
+  "teacher": {
+   "statements": 3194,
+   "agreement": 0.9781,
+   "kappa": 0.6425
+  },
+  "teacher_perturbed": {
+   "statements": 861,
+   "agreement": 0.9861,
+   "kappa": 0.97
+  },
+  "systems (no controls)": {
+   "statements": 10300,
+   "agreement": 0.9716,
+   "kappa": 0.6139
+  }
+ }
+}

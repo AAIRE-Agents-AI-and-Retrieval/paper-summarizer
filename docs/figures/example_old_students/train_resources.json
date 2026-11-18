@@ -1,0 +1,448 @@
+[
+ {
+  "schema": "scisum.train_resources/1",
+  "run": "main",
+  "kind": "sft",
+  "missing": [],
+  "base_model": "Qwen/Qwen3-4B-Instruct-2507",
+  "params_total": 4154588672,
+  "params_trainable": 132120576,
+  "lr": 0.0001,
+  "chunks": 2,
+  "finished": true,
+  "interrupted_chunks": 1,
+  "world": 2,
+  "gpu_type": "NVIDIA H200",
+  "wall_hours": 13.763,
+  "gpu_hours": 27.525,
+  "steps": 8750,
+  "examples": 70000,
+  "tokens": 728505106,
+  "tokens_per_s_per_gpu": 7513.9,
+  "peak_vram_gb": 16.48,
+  "gpu_hours_per_1000_examples": 0.3932,
+  "final_train_loss": 0.64407,
+  "val_loss": [
+   {
+    "examples": 0,
+    "step": 0,
+    "loss_per_token": 1.32245,
+    "ppl": 3.753,
+    "papers": 200,
+    "nats_per_paper": 1322.89
+   },
+   {
+    "examples": 1000,
+    "step": 125,
+    "loss_per_token": 0.70277,
+    "ppl": 2.019,
+    "papers": 200,
+    "nats_per_paper": 703.0
+   },
+   {
+    "examples": 5000,
+    "step": 625,
+    "loss_per_token": 0.66677,
+    "ppl": 1.948,
+    "papers": 200,
+    "nats_per_paper": 666.99
+   },
+   {
+    "examples": 10000,
+    "step": 1250,
+    "loss_per_token": 0.65319,
+    "ppl": 1.922,
+    "papers": 200,
+    "nats_per_paper": 653.41
+   },
+   {
+    "examples": 20000,
+    "step": 2500,
+    "loss_per_token": 0.6392,
+    "ppl": 1.895,
+    "papers": 200,
+    "nats_per_paper": 639.41
+   },
+   {
+    "examples": 30000,
+    "step": 3750,
+    "loss_per_token": 0.63207,
+    "ppl": 1.882,
+    "papers": 200,
+    "nats_per_paper": 632.28
+   },
+   {
+    "examples": 40000,
+    "step": 5000,
+    "loss_per_token": 0.6277,
+    "ppl": 1.873,
+    "papers": 200,
+    "nats_per_paper": 627.91
+   },
+   {
+    "examples": 50000,
+    "step": 6250,
+    "loss_per_token": 0.62525,
+    "ppl": 1.869,
+    "papers": 200,
+    "nats_per_paper": 625.46
+   },
+   {
+    "examples": 60000,
+    "step": 7500,
+    "loss_per_token": 0.62246,
+    "ppl": 1.864,
+    "papers": 200,
+    "nats_per_paper": 622.67
+   },
+   {
+    "examples": 70000,
+    "step": 8750,
+    "loss_per_token": 0.603,
+    "ppl": 1.828,
+    "papers": 200,
+    "nats_per_paper": 603.2
+   }
+  ]
+ },
+ {
+  "schema": "scisum.train_resources/1",
+  "run": "k2",
+  "kind": "sft",
+  "missing": [],
+  "base_model": "IFM/K2-Horizon-7B",
+  "params_total": 9173766144,
+  "params_trainable": 174587904,
+  "lr": 0.0001,
+  "chunks": 1,
+  "finished": true,
+  "interrupted_chunks": 0,
+  "world": 2,
+  "gpu_type": "NVIDIA H200",
+  "wall_hours": 16.623,
+  "gpu_hours": 33.246,
+  "steps": 8750,
+  "examples": 70000,
+  "tokens": 700803142,
+  "tokens_per_s_per_gpu": 5949.6,
+  "peak_vram_gb": 29.63,
+  "gpu_hours_per_1000_examples": 0.4749,
+  "final_train_loss": 0.6133,
+  "val_loss": [
+   {
+    "examples": 0,
+    "step": 0,
+    "loss_per_token": 0.69875,
+    "ppl": 2.011,
+    "papers": 200,
+    "nats_per_paper": 643.78
+   },
+   {
+    "examples": 1000,
+    "step": 125,
+    "loss_per_token": 0.60298,
+    "ppl": 1.828,
+    "papers": 200,
+    "nats_per_paper": 555.55
+   },
+   {
+    "examples": 5000,
+    "step": 625,
+    "loss_per_token": 0.58523,
+    "ppl": 1.795,
+    "papers": 200,
+    "nats_per_paper": 539.19
+   },
+   {
+    "examples": 10000,
+    "step": 1250,
+    "loss_per_token": 0.57829,
+    "ppl": 1.783,
+    "papers": 200,
+    "nats_per_paper": 532.8
+   },
+   {
+    "examples": 20000,
+    "step": 2500,
+    "loss_per_token": 0.57434,
+    "ppl": 1.776,
+    "papers": 200,
+    "nats_per_paper": 529.16
+   },
+   {
+    "examples": 30000,
+    "step": 3750,
+    "loss_per_token": 0.57093,
+    "ppl": 1.77,
+    "papers": 200,
+    "nats_per_paper": 526.02
+   },
+   {
+    "examples": 40000,
+    "step": 5000,
+    "loss_per_token": 0.56711,
+    "ppl": 1.763,
+    "papers": 200,
+    "nats_per_paper": 522.5
+   },
+   {
+    "examples": 50000,
+    "step": 6250,
+    "loss_per_token": 0.56734,
+    "ppl": 1.764,
+    "papers": 200,
+    "nats_per_paper": 522.71
+   },
+   {
+    "examples": 60000,
+    "step": 7500,
+    "loss_per_token": 0.56408,
+    "ppl": 1.758,
+    "papers": 200,
+    "nats_per_paper": 519.71
+   },
+   {
+    "examples": 70000,
+    "step": 8750,
+    "loss_per_token": 0.55147,
+    "ppl": 1.736,
+    "papers": 200,
+    "nats_per_paper": 508.09
+   }
+  ]
+ },
+ {
+  "schema": "scisum.train_resources/1",
+  "run": "q35",
+  "kind": "sft",
+  "missing": [],
+  "base_model": "Qwen/Qwen3.5-9B",
+  "params_total": 9101652480,
+  "params_trainable": 147849216,
+  "lr": 0.0001,
+  "chunks": 1,
+  "finished": true,
+  "interrupted_chunks": 0,
+  "world": 2,
+  "gpu_type": "NVIDIA A100-SXM4-80GB",
+  "wall_hours": 16.987,
+  "gpu_hours": 33.974,
+  "steps": 2500,
+  "examples": 20000,
+  "tokens": 271219044,
+  "tokens_per_s_per_gpu": 2298.6,
+  "peak_vram_gb": 38.07,
+  "gpu_hours_per_1000_examples": 1.6987,
+  "final_train_loss": 0.50067,
+  "val_loss": [
+   {
+    "examples": 0,
+    "step": 0,
+    "loss_per_token": 0.70006,
+    "ppl": 2.014,
+    "papers": 200,
+    "nats_per_paper": 699.61
+   },
+   {
+    "examples": 504,
+    "step": 63,
+    "loss_per_token": 0.49699,
+    "ppl": 1.644,
+    "papers": 200,
+    "nats_per_paper": 496.67
+   },
+   {
+    "examples": 1000,
+    "step": 125,
+    "loss_per_token": 0.48751,
+    "ppl": 1.628,
+    "papers": 200,
+    "nats_per_paper": 487.2
+   },
+   {
+    "examples": 2504,
+    "step": 313,
+    "loss_per_token": 0.4797,
+    "ppl": 1.616,
+    "papers": 200,
+    "nats_per_paper": 479.39
+   },
+   {
+    "examples": 5000,
+    "step": 625,
+    "loss_per_token": 0.47212,
+    "ppl": 1.603,
+    "papers": 200,
+    "nats_per_paper": 471.82
+   },
+   {
+    "examples": 7504,
+    "step": 938,
+    "loss_per_token": 0.46768,
+    "ppl": 1.596,
+    "papers": 200,
+    "nats_per_paper": 467.38
+   },
+   {
+    "examples": 10000,
+    "step": 1250,
+    "loss_per_token": 0.46674,
+    "ppl": 1.595,
+    "papers": 200,
+    "nats_per_paper": 466.44
+   },
+   {
+    "examples": 12504,
+    "step": 1563,
+    "loss_per_token": 0.46306,
+    "ppl": 1.589,
+    "papers": 200,
+    "nats_per_paper": 462.76
+   },
+   {
+    "examples": 15000,
+    "step": 1875,
+    "loss_per_token": 0.46166,
+    "ppl": 1.587,
+    "papers": 200,
+    "nats_per_paper": 461.36
+   },
+   {
+    "examples": 17504,
+    "step": 2188,
+    "loss_per_token": 0.46121,
+    "ppl": 1.586,
+    "papers": 200,
+    "nats_per_paper": 460.91
+   },
+   {
+    "examples": 20000,
+    "step": 2500,
+    "loss_per_token": 0.44966,
+    "ppl": 1.568,
+    "papers": 200,
+    "nats_per_paper": 449.37
+   }
+  ]
+ },
+ {
+  "schema": "scisum.train_resources/1",
+  "run": "q35prefcc",
+  "kind": "preference",
+  "missing": [],
+  "base_model": "Qwen/Qwen3.5-9B",
+  "params_total": 9101652480,
+  "params_trainable": 147849216,
+  "lr": 2e-05,
+  "chunks": 1,
+  "finished": true,
+  "interrupted_chunks": 0,
+  "world": 1,
+  "gpu_type": null,
+  "wall_hours": 2.116,
+  "gpu_hours": 2.116,
+  "steps": 155,
+  "examples": 1233,
+  "tokens": 33596486,
+  "tokens_per_s_per_gpu": 4410.3,
+  "peak_vram_gb": 37.18,
+  "gpu_hours_per_1000_examples": 1.7162,
+  "final_train_loss": 0.60959,
+  "val_loss": [
+   {
+    "examples": 0,
+    "step": 0,
+    "loss_per_token": 0.45,
+    "ppl": 1.568,
+    "papers": 200,
+    "nats_per_paper": 449.71
+   },
+   {
+    "examples": 504,
+    "step": 63,
+    "loss_per_token": 0.47849,
+    "ppl": 1.614,
+    "papers": 200,
+    "nats_per_paper": 478.18
+   },
+   {
+    "examples": 1000,
+    "step": 125,
+    "loss_per_token": 0.47558,
+    "ppl": 1.609,
+    "papers": 200,
+    "nats_per_paper": 475.27
+   },
+   {
+    "examples": 1233,
+    "step": 155,
+    "loss_per_token": 0.47788,
+    "ppl": 1.613,
+    "papers": 200,
+    "nats_per_paper": 477.57
+   }
+  ],
+  "final_pref_acc": 0.9091,
+  "final_margin": 3.4947
+ },
+ {
+  "schema": "scisum.train_resources/1",
+  "run": "q35prefccs2",
+  "kind": "preference",
+  "missing": [],
+  "base_model": "Qwen/Qwen3.5-9B",
+  "params_total": 9101652480,
+  "params_trainable": 147849216,
+  "lr": 2e-05,
+  "chunks": 1,
+  "finished": true,
+  "interrupted_chunks": 0,
+  "world": 1,
+  "gpu_type": null,
+  "wall_hours": 7.281,
+  "gpu_hours": 7.281,
+  "steps": 155,
+  "examples": 1233,
+  "tokens": 33596486,
+  "tokens_per_s_per_gpu": 1281.7,
+  "peak_vram_gb": 37.13,
+  "gpu_hours_per_1000_examples": 5.9054,
+  "final_train_loss": 0.65572,
+  "val_loss": [
+   {
+    "examples": 0,
+    "step": 0,
+    "loss_per_token": 0.44999,
+    "ppl": 1.568,
+    "papers": 200,
+    "nats_per_paper": 449.7
+   },
+   {
+    "examples": 504,
+    "step": 63,
+    "loss_per_token": 0.47694,
+    "ppl": 1.611,
+    "papers": 200,
+    "nats_per_paper": 476.63
+   },
+   {
+    "examples": 1000,
+    "step": 125,
+    "loss_per_token": 0.47868,
+    "ppl": 1.614,
+    "papers": 200,
+    "nats_per_paper": 478.37
+   },
+   {
+    "examples": 1233,
+    "step": 155,
+    "loss_per_token": 0.47734,
+    "ppl": 1.612,
+    "papers": 200,
+    "nats_per_paper": 477.03
+   }
+  ],
+  "final_pref_acc": 0.9091,
+  "final_margin": 3.2266
+ }
+]

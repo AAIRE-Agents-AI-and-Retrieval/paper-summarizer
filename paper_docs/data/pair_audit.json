@@ -1,0 +1,341 @@
+{
+ "reader": "frontier LLM (agent CLI)",
+ "arm": "prefcc",
+ "arm_pairs": {
+  "pairs": 1233,
+  "teacher": 940,
+  "sample": 293
+ },
+ "sampled": 80,
+ "parsed": 80,
+ "pairs": 80,
+ "strata": {
+  "teacher": 50,
+  "sample": 30
+ },
+ "weights": {
+  "teacher": 0.7623682076236821,
+  "sample": 0.23763179237631793
+ },
+ "faithfulness": {
+  "chosen": {
+   "n": 80,
+   "estimate": 0.7299,
+   "ci95": [
+    0.6305,
+    0.822
+   ],
+   "by_stratum": {
+    "teacher": 0.76,
+    "sample": 0.6333
+   }
+  },
+  "rejected": {
+   "n": 80,
+   "estimate": 0.1097,
+   "ci95": [
+    0.0554,
+    0.1713
+   ],
+   "by_stratum": {
+    "teacher": 0.04,
+    "sample": 0.3333
+   }
+  },
+  "tie": {
+   "n": 80,
+   "estimate": 0.1604,
+   "ci95": [
+    0.0842,
+    0.2519
+   ],
+   "by_stratum": {
+    "teacher": 0.2,
+    "sample": 0.0333
+   }
+  },
+  "chosen_minus_rejected": {
+   "n": 80,
+   "estimate": 0.6202,
+   "ci95": [
+    0.4812,
+    0.7519
+   ],
+   "by_stratum": {
+    "teacher": 0.72,
+    "sample": 0.3
+   }
+  }
+ },
+ "coverage": {
+  "chosen": {
+   "n": 80,
+   "estimate": 0.6525,
+   "ci95": [
+    0.5451,
+    0.7598
+   ],
+   "by_stratum": {
+    "teacher": 0.7,
+    "sample": 0.5
+   }
+  },
+  "rejected": {
+   "n": 80,
+   "estimate": 0.1085,
+   "ci95": [
+    0.0469,
+    0.1853
+   ],
+   "by_stratum": {
+    "teacher": 0.08,
+    "sample": 0.2
+   }
+  },
+  "tie": {
+   "n": 80,
+   "estimate": 0.239,
+   "ci95": [
+    0.1469,
+    0.3378
+   ],
+   "by_stratum": {
+    "teacher": 0.22,
+    "sample": 0.3
+   }
+  },
+  "chosen_minus_rejected": {
+   "n": 80,
+   "estimate": 0.544,
+   "ci95": [
+    0.3903,
+    0.697
+   ],
+   "by_stratum": {
+    "teacher": 0.62,
+    "sample": 0.3
+   }
+  }
+ },
+ "overall": {
+  "chosen": {
+   "n": 80,
+   "estimate": 0.8135,
+   "ci95": [
+    0.7275,
+    0.8897
+   ],
+   "by_stratum": {
+    "teacher": 0.88,
+    "sample": 0.6
+   }
+  },
+  "rejected": {
+   "n": 80,
+   "estimate": 0.156,
+   "ci95": [
+    0.0865,
+    0.2335
+   ],
+   "by_stratum": {
+    "teacher": 0.08,
+    "sample": 0.4
+   }
+  },
+  "tie": {
+   "n": 80,
+   "estimate": 0.0305,
+   "ci95": [
+    0.0,
+    0.0762
+   ],
+   "by_stratum": {
+    "teacher": 0.04,
+    "sample": 0.0
+   }
+  },
+  "chosen_minus_rejected": {
+   "n": 80,
+   "estimate": 0.6574,
+   "ci95": [
+    0.4996,
+    0.7958
+   ],
+   "by_stratum": {
+    "teacher": 0.8,
+    "sample": 0.2
+   }
+  }
+ },
+ "unsupported_share": {
+  "chosen": {
+   "n": 80,
+   "estimate": 0.0477,
+   "ci95": [
+    0.0397,
+    0.0568
+   ],
+   "by_stratum": {
+    "teacher": 0.0345,
+    "sample": 0.0902
+   }
+  },
+  "rejected": {
+   "n": 80,
+   "estimate": 0.0849,
+   "ci95": [
+    0.072,
+    0.098
+   ],
+   "by_stratum": {
+    "teacher": 0.0823,
+    "sample": 0.0932
+   }
+  },
+  "chosen_minus_rejected": {
+   "n": 80,
+   "estimate": -0.0372,
+   "ci95": [
+    -0.0509,
+    -0.0229
+   ],
+   "by_stratum": {
+    "teacher": -0.0478,
+    "sample": -0.003
+   }
+  }
+ },
+ "major_share": {
+  "chosen": {
+   "n": 80,
+   "estimate": 0.0048,
+   "ci95": [
+    0.0023,
+    0.0078
+   ],
+   "by_stratum": {
+    "teacher": 0.0009,
+    "sample": 0.0174
+   }
+  },
+  "rejected": {
+   "n": 80,
+   "estimate": 0.0333,
+   "ci95": [
+    0.0244,
+    0.043
+   ],
+   "by_stratum": {
+    "teacher": 0.0321,
+    "sample": 0.0374
+   }
+  },
+  "chosen_minus_rejected": {
+   "n": 80,
+   "estimate": -0.0285,
+   "ci95": [
+    -0.038,
+    -0.0195
+   ],
+   "by_stratum": {
+    "teacher": -0.0312,
+    "sample": -0.0201
+   }
+  }
+ },
+ "main_difference": {
+  "all": {
+   "errors": 47,
+   "facts": 19,
+   "specificity": 13,
+   "none": 1
+  },
+  "reward_and_auditor_disagree": {
+   "errors": 8,
+   "facts": 4,
+   "specificity": 4
+  },
+  "tie": {
+   "none": 1,
+   "specificity": 1
+  }
+ },
+ "confidence": {
+  "high": 23,
+  "medium": 32,
+  "low": 25
+ },
+ "overall_by_stored_parts": {
+  "reward gap >= its median (0.351)": {
+   "holds": {
+    "n": 40,
+    "chosen": 0.875,
+    "rejected": 0.125,
+    "tie": 0.0
+   },
+   "does_not_hold": {
+    "n": 40,
+    "chosen": 0.675,
+    "rejected": 0.275,
+    "tie": 0.05
+   }
+  },
+  "fact gap (chosen - rejected) >= 0.20": {
+   "holds": {
+    "n": 45,
+    "chosen": 0.756,
+    "rejected": 0.244,
+    "tie": 0.0
+   },
+   "does_not_hold": {
+    "n": 35,
+    "chosen": 0.8,
+    "rejected": 0.143,
+    "tie": 0.057
+   }
+  },
+  "chosen claim share <= rejected claim share": {
+   "holds": {
+    "n": 68,
+    "chosen": 0.794,
+    "rejected": 0.206,
+    "tie": 0.0
+   },
+   "does_not_hold": {
+    "n": 12,
+    "chosen": 0.667,
+    "rejected": 0.167,
+    "tie": 0.167
+   }
+  },
+  "chosen is the longer summary": {
+   "holds": {
+    "n": 31,
+    "chosen": 0.839,
+    "rejected": 0.161,
+    "tie": 0.0
+   },
+   "does_not_hold": {
+    "n": 49,
+    "chosen": 0.735,
+    "rejected": 0.224,
+    "tie": 0.041
+   }
+  },
+  "rejected has the higher fact reward": {
+   "holds": {
+    "n": 3,
+    "chosen": 1.0,
+    "rejected": 0.0,
+    "tie": 0.0
+   },
+   "does_not_hold": {
+    "n": 77,
+    "chosen": 0.766,
+    "rejected": 0.208,
+    "tie": 0.026
+   }
+  }
+ },
+ "cost_equiv_usd_total": 26.67
+}

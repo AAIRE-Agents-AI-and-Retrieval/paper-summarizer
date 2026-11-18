@@ -1,0 +1,312 @@
+{
+ "arms": [
+  {
+   "name": "r4a",
+   "settings": {
+    "imp_pair_filter": "c_teacher"
+   },
+   "hypothesis": "In prefcc's 293 sample-chosen pairs the blind auditor prefers the reward's chosen side only 60% of the time and finds it no more faithful than the rejected one (0.090 vs 0.093 unsupported per statement; teacher-chosen pairs 0.035 vs 0.082), so these pairs train toward texts about 2.5x less faithful than the teacher's. Dropping them (a strict subset of prefcc's pairs, 940) makes both the DPO and the likelihood term pull only toward the teacher's text: lower unsupported share on test, at a small recall cost.",
+   "predictions": {
+    "vs_C": {
+     "fact": [
+      0.018,
+      0.048
+     ],
+     "claim_share": [
+      -0.006,
+      0.003
+     ],
+     "length_ratio": [
+      -0.04,
+      0.05
+     ],
+     "rougeL": [
+      -0.006,
+      0.0
+     ]
+    },
+    "vs_prefcc": {
+     "fact": [
+      -0.024,
+      0.006
+     ],
+     "claim_share": [
+      -0.005,
+      0.004
+     ],
+     "length_ratio": [
+      -0.07,
+      0.02
+     ],
+     "rougeL": [
+      -0.001,
+      0.004
+     ]
+    }
+   },
+   "falsified_if": "V fact more than 0.020 below prefcc's (the sample-chosen pairs carry a large part of the recall gain, so dropping them is not free), or V ROUGE-L not above prefcc's point estimate (training only toward teacher text did not move the wording toward the teacher). The faithfulness half can only be tested on the test papers: V's claim share does not rank arms (rho 0.14)."
+  },
+  {
+   "name": "r4b",
+   "settings": {
+    "imp_claim_weight": 3.0
+   },
+   "hypothesis": "The claim penalty is the only knob with a measured test effect on faithfulness (weight 0 to 1: unsupported share -0.007 and NLI +0.022 against preflc, no recall cost). At weight 3 the pairs' claim contrast (rejected minus chosen claim share) widens from 0.037 to 0.052 while the fact contrast falls from 0.226 to 0.178, so the dose-response should continue on test at a small recall cost.",
+   "predictions": {
+    "vs_C": {
+     "fact": [
+      0.015,
+      0.045
+     ],
+     "claim_share": [
+      -0.008,
+      0.001
+     ],
+     "length_ratio": [
+      -0.04,
+      0.05
+     ],
+     "rougeL": [
+      -0.008,
+      -0.002
+     ]
+    },
+    "vs_prefcc": {
+     "fact": [
+      -0.027,
+      0.003
+     ],
+     "claim_share": [
+      -0.006,
+      0.002
+     ],
+     "length_ratio": [
+      -0.07,
+      0.02
+     ],
+     "rougeL": [
+      -0.003,
+      0.002
+     ]
+    }
+   },
+   "falsified_if": "V claim share not below prefcc's point estimate (the arm did not learn even the training grader's stronger penalty, so there is no mechanism for a test effect), or V fact more than 0.025 below prefcc's (the stronger penalty costs recall, unlike round 3's step from 0 to 1)."
+  },
+  {
+   "name": "r4c",
+   "settings": {
+    "imp_pairs_per_paper": 2
+   },
+   "hypothesis": "Most of prefcc's papers have a second sample that trails the chosen summary by at least 0.25 (2,165 pairs over 1,233 papers at k = 2, with prefcc's mix: 22% sample-chosen, same claim and fact contrasts). A second rejected sample per paper adds contrast prefcc never used, so recall should rise at an unchanged unsupported share.",
+   "predictions": {
+    "vs_C": {
+     "fact": [
+      0.03,
+      0.07
+     ],
+     "claim_share": [
+      -0.004,
+      0.005
+     ],
+     "length_ratio": [
+      -0.07,
+      0.04
+     ],
+     "rougeL": [
+      -0.012,
+      -0.003
+     ]
+    },
+    "vs_prefcc": {
+     "fact": [
+      -0.01,
+      0.028
+     ],
+     "claim_share": [
+      -0.003,
+      0.006
+     ],
+     "length_ratio": [
+      -0.1,
+      0.0
+     ],
+     "rougeL": [
+      -0.007,
+      0.001
+     ]
+    }
+   },
+   "falsified_if": "V fact not above prefcc's by at least 0.005 while V length is within 0.03 of prefcc's (a second rejected sample per paper adds no recall at equal length). If V length falls more than 0.03 below prefcc's, a flat fact result is confounded with length (these pairs reject the longer summary slightly more often than prefcc's: median rejected/chosen length 1.019 vs 1.010) and is read with that caveat."
+  },
+  {
+   "name": "r4d",
+   "settings": {
+    "imp_pair_filter": "c_teacher",
+    "imp_claim_weight": 3.0,
+    "imp_pairs_per_paper": 2
+   },
+   "hypothesis": "The three changes act on different parts of the pairs: which pairs are kept (the teacher is always chosen), which sample is rejected (the less faithful one), and how many negatives each paper gives. Combined (1,808 pairs over 971 papers, claim contrast 0.047, all chosen sides teacher text), the first two should give the largest faithfulness gain of the four arms and the third should win back the recall the first two cost. That makes it the best candidate to beat prefcc on unsupported share or NLI without losing recall.",
+   "predictions": {
+    "vs_C": {
+     "fact": [
+      0.015,
+      0.05
+     ],
+     "claim_share": [
+      -0.009,
+      0.001
+     ],
+     "length_ratio": [
+      -0.06,
+      0.04
+     ],
+     "rougeL": [
+      -0.008,
+      0.0
+     ]
+    },
+    "vs_prefcc": {
+     "fact": [
+      -0.027,
+      0.008
+     ],
+     "claim_share": [
+      -0.007,
+      0.002
+     ],
+     "length_ratio": [
+      -0.09,
+      0.01
+     ],
+     "rougeL": [
+      -0.003,
+      0.004
+     ]
+    }
+   },
+   "falsified_if": "V fact more than 0.015 below prefcc's (the extra negatives do not win back the recall that the filter and the claim weight cost); that result would also rule it out as a finalist. Its faithfulness gain can only be tested on the test papers."
+  }
+ ],
+ "blends": [
+  {
+   "name": "r4cw75",
+   "of": "r4c",
+   "w": 0.75,
+   "hypothesis": "If r4c gains recall but moves further from the teacher's wording (it takes 271 optimiser steps to prefcc's 155), a 0.75 blend with C keeps at least 80% of its V fact gain over C and recovers at least a third of its ROUGE-L deficit, as ccmix75 did for prefcc (87% of the recall gain on test). This trades r4c's surplus recall for margin on criterion 3, prefcc's tightest (BERTScore -0.0085 against a limit of -0.010)."
+  }
+ ],
+ "recommend_outside_space": "(1) Give V a faithfulness signal it can rank: claim-check V with the evaluation-side verifier (Qwen3.8-27B) as well as Gemma, or enlarge V, and re-run the calibration. Right now V's claim share does not rank arms (rho 0.14), so every faithfulness hypothesis can only be tested on the two finalists. (2) A second verifier for the candidates' claim check, with a statement penalised only when both verifiers flag it (or an independent strong reader on a sample). In sample-chosen pairs Gemma's claim contrast (chosen 0.029 vs rejected 0.056) is not confirmed by the auditor (0.090 vs 0.093), while in teacher-chosen pairs it is (0.026 vs 0.058 against 0.035 vs 0.082). (3) More pool papers sampled and scored (1,520 to 3,000). Pairs are about one per paper, and V's resolution of about 0.017 fact between arms is the same size as the effects. (4) Score V with two pair orders per arm. Pair order alone moves V length by 0.04-0.06 and V fact by up to 0.010. (5) A new round of samples from prefcc (or the round-4 winner), so the next round's rejected side is on-policy for the model being trained.",
+ "pair_statistics": {
+  "r4a": {
+   "changed_from_prefcc": {
+    "imp_pair_filter": "c_teacher"
+   },
+   "pairs": 940,
+   "papers": 940,
+   "chosen_is_sample": 0,
+   "reward_gap_mean": 0.3809,
+   "fact_chosen": 0.6859,
+   "fact_rejected": 0.4851,
+   "fact_gap_mean": 0.2008,
+   "rejected_has_more_facts_share": 0.0426,
+   "claim_share_chosen": 0.0219,
+   "claim_share_rejected": 0.0571,
+   "chosen_has_more_unsupported_share": 0.1223,
+   "length_chosen_vs_teacher": 1.0,
+   "length_rejected_vs_teacher": 1.0186,
+   "rejected_over_chosen_length_median": 1.0067,
+   "rejected_shorter_share": 0.4617,
+   "rougeL_to_teacher_chosen_samples": 0.0,
+   "rougeL_to_teacher_rejected": 0.4474,
+   "same_pair_as_prefcc": 940,
+   "papers_also_in_prefcc": 940,
+   "prefcc_pairs": 1233,
+   "optimiser_steps": 118,
+   "training_hours_estimate": 6.9
+  },
+  "r4b": {
+   "changed_from_prefcc": {
+    "imp_claim_weight": 3.0
+   },
+   "pairs": 1347,
+   "papers": 1347,
+   "chosen_is_sample": 376,
+   "reward_gap_mean": 0.4365,
+   "fact_chosen": 0.6801,
+   "fact_rejected": 0.5023,
+   "fact_gap_mean": 0.1778,
+   "rejected_has_more_facts_share": 0.0794,
+   "claim_share_chosen": 0.0156,
+   "claim_share_rejected": 0.0678,
+   "chosen_has_more_unsupported_share": 0.0497,
+   "length_chosen_vs_teacher": 0.9895,
+   "length_rejected_vs_teacher": 1.0007,
+   "rejected_over_chosen_length_median": 1.0048,
+   "rejected_shorter_share": 0.4699,
+   "rougeL_to_teacher_chosen_samples": 0.4452,
+   "rougeL_to_teacher_rejected": 0.4496,
+   "same_pair_as_prefcc": 878,
+   "papers_also_in_prefcc": 1226,
+   "prefcc_pairs": 1233,
+   "optimiser_steps": 169,
+   "training_hours_estimate": 9.8
+  },
+  "r4c": {
+   "changed_from_prefcc": {
+    "imp_pairs_per_paper": 2
+   },
+   "pairs": 2165,
+   "papers": 1233,
+   "chosen_is_sample": 486,
+   "reward_gap_mean": 0.3948,
+   "fact_chosen": 0.6968,
+   "fact_rejected": 0.4728,
+   "fact_gap_mean": 0.224,
+   "rejected_has_more_facts_share": 0.0425,
+   "claim_share_chosen": 0.0245,
+   "claim_share_rejected": 0.0612,
+   "chosen_has_more_unsupported_share": 0.1247,
+   "length_chosen_vs_teacher": 0.9914,
+   "length_rejected_vs_teacher": 1.0201,
+   "rejected_over_chosen_length_median": 1.019,
+   "rejected_shorter_share": 0.4346,
+   "rougeL_to_teacher_chosen_samples": 0.4472,
+   "rougeL_to_teacher_rejected": 0.4457,
+   "same_pair_as_prefcc": 1233,
+   "papers_also_in_prefcc": 1233,
+   "prefcc_pairs": 1233,
+   "optimiser_steps": 271,
+   "training_hours_estimate": 15.8
+  },
+  "r4d": {
+   "changed_from_prefcc": {
+    "imp_claim_weight": 3.0,
+    "imp_pairs_per_paper": 2,
+    "imp_pair_filter": "c_teacher"
+   },
+   "pairs": 1808,
+   "papers": 971,
+   "chosen_is_sample": 0,
+   "reward_gap_mean": 0.4481,
+   "fact_chosen": 0.6835,
+   "fact_rejected": 0.5218,
+   "fact_gap_mean": 0.1617,
+   "rejected_has_more_facts_share": 0.0985,
+   "claim_share_chosen": 0.0116,
+   "claim_share_rejected": 0.0584,
+   "chosen_has_more_unsupported_share": 0.0537,
+   "length_chosen_vs_teacher": 1.0,
+   "length_rejected_vs_teacher": 1.0162,
+   "rejected_over_chosen_length_median": 1.0065,
+   "rejected_shorter_share": 0.4762,
+   "rougeL_to_teacher_chosen_samples": 0.0,
+   "rougeL_to_teacher_rejected": 0.4522,
+   "same_pair_as_prefcc": 811,
+   "papers_also_in_prefcc": 906,
+   "prefcc_pairs": 1233,
+   "optimiser_steps": 226,
+   "training_hours_estimate": 13.2
+  }
+ },
+ "accepted": "2026-11-15T21:36:27+0100"
+}

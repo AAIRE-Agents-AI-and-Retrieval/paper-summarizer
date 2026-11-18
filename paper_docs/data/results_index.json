@@ -1,0 +1,1978 @@
+{
+  "students": {
+    "A": {
+      "run": "main",
+      "exists": true,
+      "config": {
+        "run": "main",
+        "cap": 70000,
+        "world": 2,
+        "total_steps": 8750,
+        "warmup": 87,
+        "decay_steps": 875,
+        "train_examples": 70445,
+        "train_tokens": 734263935,
+        "lr": 0.0001,
+        "grad_accum": 4,
+        "settings": {
+          "repo_root": "<repo>",
+          "teacher_prompt_version": "ft-grobid-v1",
+          "base_model": "Qwen/Qwen3-4B-Instruct-2507",
+          "seed": 20261014,
+          "n_train": 70000,
+          "n_val": 15000,
+          "n_test": 15000,
+          "max_seq_len": 16384,
+          "gen_reserve_tokens": 3072,
+          "max_target_tokens": 6500,
+          "min_body_chars": 2000,
+          "max_body_chars": 160000,
+          "section_kinds": [
+            "body",
+            "captions"
+          ],
+          "lora_r": 64,
+          "lora_alpha": 128,
+          "lora_dropout": 0.0,
+          "lora_targets": [
+            "q_proj",
+            "k_proj",
+            "v_proj",
+            "o_proj",
+            "gate_proj",
+            "up_proj",
+            "down_proj"
+          ],
+          "lr": 0.0001,
+          "warmup_frac": 0.01,
+          "decay_frac": 0.1,
+          "decay_floor": 0.1,
+          "grad_accum": 4,
+          "max_grad_norm": 1.0,
+          "adam_betas": [
+            0.9,
+            0.95
+          ],
+          "weight_decay": 0.0,
+          "use_liger": false,
+          "loss_impl": "head_slice",
+          "gradient_checkpointing": true,
+          "log_every_steps": 5,
+          "save_every_examples": 2500,
+          "milestones": [
+            1000,
+            5000,
+            10000,
+            20000,
+            50000,
+            70000
+          ],
+          "loss_eval_every": 10000,
+          "loss_eval_n": 200,
+          "curve_eval_n": 1000,
+          "faithfulness_n": 300,
+          "gen_max_new_tokens": 3000,
+          "gen_temperature": 0.0,
+          "nli_model": "microsoft/deberta-large-mnli",
+          "bertscore_model": "roberta-large",
+          "bertscore_layer": 17,
+          "judge_api_key": "***REDACTED***",
+          "judge_model": "qwen38-27b",
+          "judge_max_tokens": 1024,
+          "judge_thinking": false,
+          "judge_n": 1000,
+          "judge_enabled": false,
+          "judge_source_chars": 9000
+        },
+        "params_total": 4154588672,
+        "params_trainable": 132120576,
+        "trainable_pct": 3.18,
+        "dtypes": [
+          "torch.float32"
+        ],
+        "base_model": "Qwen/Qwen3-4B-Instruct-2507",
+        "seed": 20261014,
+        "max_seq_len": 16384,
+        "prompt_version": "ft-grobid-v1",
+        "slurm_job": "4474412",
+        "host": "an H200 node"
+      },
+      "state": {
+        "examples": 70000,
+        "step": 8750,
+        "tokens": 728505106,
+        "target_tokens": 70683688,
+        "seconds": 49500.8,
+        "chunks": 2,
+        "skipped_steps": 0,
+        "milestones_done": [
+          1000,
+          5000,
+          10000,
+          20000,
+          50000,
+          70000
+        ],
+        "finished": true
+      },
+      "train_points": 1759,
+      "median_tokens_per_s_per_rank": 7513.9,
+      "peak_vram_gib": 16.48,
+      "val_loss": [
+        {
+          "examples": 0,
+          "loss": 1.32245,
+          "papers": 200,
+          "target_tokens_per_paper": 1000.3,
+          "nats_per_paper": 1322.9
+        },
+        {
+          "examples": 1000,
+          "loss": 0.70277,
+          "papers": 200,
+          "target_tokens_per_paper": 1000.3,
+          "nats_per_paper": 703.0
+        },
+        {
+          "examples": 5000,
+          "loss": 0.66677,
+          "papers": 200,
+          "target_tokens_per_paper": 1000.3,
+          "nats_per_paper": 667.0
+        },
+        {
+          "examples": 10000,
+          "loss": 0.65319,
+          "papers": 200,
+          "target_tokens_per_paper": 1000.3,
+          "nats_per_paper": 653.4
+        },
+        {
+          "examples": 20000,
+          "loss": 0.6392,
+          "papers": 200,
+          "target_tokens_per_paper": 1000.3,
+          "nats_per_paper": 639.4
+        },
+        {
+          "examples": 30000,
+          "loss": 0.63207,
+          "papers": 200,
+          "target_tokens_per_paper": 1000.3,
+          "nats_per_paper": 632.3
+        },
+        {
+          "examples": 40000,
+          "loss": 0.6277,
+          "papers": 200,
+          "target_tokens_per_paper": 1000.3,
+          "nats_per_paper": 627.9
+        },
+        {
+          "examples": 50000,
+          "loss": 0.62525,
+          "papers": 200,
+          "target_tokens_per_paper": 1000.3,
+          "nats_per_paper": 625.5
+        },
+        {
+          "examples": 60000,
+          "loss": 0.62246,
+          "papers": 200,
+          "target_tokens_per_paper": 1000.3,
+          "nats_per_paper": 622.7
+        },
+        {
+          "examples": 70000,
+          "loss": 0.603,
+          "papers": 200,
+          "target_tokens_per_paper": 1000.3,
+          "nats_per_paper": 603.2
+        }
+      ],
+      "label": "A",
+      "model": "Qwen/Qwen3-4B-Instruct-2507",
+      "tag": "qwen3-4b-instruct-2507"
+    },
+    "B": {
+      "run": "k2",
+      "exists": true,
+      "config": {
+        "run": "k2",
+        "cap": 70000,
+        "world": 2,
+        "total_steps": 8750,
+        "warmup": 87,
+        "decay_steps": 875,
+        "train_examples": 70445,
+        "train_tokens": 706382994,
+        "lr": 0.0001,
+        "grad_accum": 4,
+        "settings": {
+          "repo_root": "<repo>",
+          "teacher_prompt_version": "ft-grobid-v1",
+          "base_model": "IFM/K2-Horizon-7B",
+          "base_model_revision": "4622f94a6632384784471fd674d5b78f8d527798",
+          "trust_remote_code": true,
+          "seed": 20261014,
+          "n_train": 70000,
+          "n_val": 15000,
+          "n_test": 15000,
+          "max_seq_len": 16384,
+          "gen_reserve_tokens": 3072,
+          "max_target_tokens": 6500,
+          "min_body_chars": 2000,
+          "max_body_chars": 160000,
+          "section_kinds": [
+            "body",
+            "captions"
+          ],
+          "lora_r": 64,
+          "lora_alpha": 128,
+          "lora_dropout": 0.0,
+          "lora_targets": [
+            "q_proj",
+            "k_proj",
+            "v_proj",
+            "o_proj",
+            "gate_proj",
+            "up_proj",
+            "down_proj"
+          ],
+          "lr": 0.0001,
+          "warmup_frac": 0.01,
+          "decay_frac": 0.1,
+          "decay_floor": 0.1,
+          "grad_accum": 4,
+          "max_grad_norm": 1.0,
+          "adam_betas": [
+            0.9,
+            0.95
+          ],
+          "weight_decay": 0.0,
+          "use_liger": false,
+          "loss_impl": "head_slice",
+          "gradient_checkpointing": true,
+          "log_every_steps": 5,
+          "save_every_examples": 2500,
+          "milestones": [
+            1000,
+            5000,
+            10000,
+            20000,
+            50000,
+            70000
+          ],
+          "loss_eval_every": 10000,
+          "loss_eval_n": 200,
+          "curve_eval_n": 1000,
+          "faithfulness_n": 300,
+          "gen_max_new_tokens": 3000,
+          "gen_temperature": 0.0,
+          "nli_model": "microsoft/deberta-large-mnli",
+          "bertscore_model": "roberta-large",
+          "bertscore_layer": 17,
+          "judge_api_key": "***REDACTED***",
+          "judge_model": "qwen38-27b",
+          "judge_max_tokens": 1024,
+          "judge_thinking": false,
+          "judge_n": 1000,
+          "judge_enabled": false,
+          "judge_source_chars": 9000
+        },
+        "params_total": 9173766144,
+        "params_trainable": 174587904,
+        "trainable_pct": 1.903,
+        "dtypes": [
+          "torch.float32"
+        ],
+        "base_model": "IFM/K2-Horizon-7B",
+        "seed": 20261014,
+        "max_seq_len": 16384,
+        "prompt_version": "ft-grobid-v1",
+        "slurm_job": "4501703",
+        "host": "an H200 node"
+      },
+      "state": {
+        "examples": 70000,
+        "step": 8750,
+        "tokens": 700803142,
+        "target_tokens": 65255154,
+        "seconds": 59857.9,
+        "chunks": 1,
+        "skipped_steps": 0,
+        "milestones_done": [
+          1000,
+          5000,
+          10000,
+          20000,
+          50000,
+          70000
+        ],
+        "finished": true
+      },
+      "train_points": 1750,
+      "median_tokens_per_s_per_rank": 5949.6,
+      "peak_vram_gib": 29.63,
+      "val_loss": [
+        {
+          "examples": 0,
+          "loss": 0.69875,
+          "papers": 200,
+          "target_tokens_per_paper": 921.3,
+          "nats_per_paper": 643.8
+        },
+        {
+          "examples": 1000,
+          "loss": 0.60298,
+          "papers": 200,
+          "target_tokens_per_paper": 921.3,
+          "nats_per_paper": 555.5
+        },
+        {
+          "examples": 5000,
+          "loss": 0.58523,
+          "papers": 200,
+          "target_tokens_per_paper": 921.3,
+          "nats_per_paper": 539.2
+        },
+        {
+          "examples": 10000,
+          "loss": 0.57829,
+          "papers": 200,
+          "target_tokens_per_paper": 921.3,
+          "nats_per_paper": 532.8
+        },
+        {
+          "examples": 20000,
+          "loss": 0.57434,
+          "papers": 200,
+          "target_tokens_per_paper": 921.3,
+          "nats_per_paper": 529.2
+        },
+        {
+          "examples": 30000,
+          "loss": 0.57093,
+          "papers": 200,
+          "target_tokens_per_paper": 921.3,
+          "nats_per_paper": 526.0
+        },
+        {
+          "examples": 40000,
+          "loss": 0.56711,
+          "papers": 200,
+          "target_tokens_per_paper": 921.3,
+          "nats_per_paper": 522.5
+        },
+        {
+          "examples": 50000,
+          "loss": 0.56734,
+          "papers": 200,
+          "target_tokens_per_paper": 921.3,
+          "nats_per_paper": 522.7
+        },
+        {
+          "examples": 60000,
+          "loss": 0.56408,
+          "papers": 200,
+          "target_tokens_per_paper": 921.3,
+          "nats_per_paper": 519.7
+        },
+        {
+          "examples": 70000,
+          "loss": 0.55147,
+          "papers": 200,
+          "target_tokens_per_paper": 921.3,
+          "nats_per_paper": 508.1
+        }
+      ],
+      "label": "B",
+      "model": "IFM/K2-Horizon-7B",
+      "tag": "k2-horizon-7b"
+    },
+    "C": {
+      "run": "q35",
+      "exists": true,
+      "config": {
+        "run": "q35",
+        "cap": 20000,
+        "world": 2,
+        "total_steps": 2500,
+        "warmup": 25,
+        "decay_steps": 250,
+        "train_examples": 22000,
+        "train_tokens": 299269493,
+        "lr": 0.0001,
+        "grad_accum": 4,
+        "settings": {
+          "repo_root": "<repo>",
+          "teacher_prompt_version": "ft-grobid-v1",
+          "base_model": "Qwen/Qwen3.5-9B",
+          "base_model_revision": "c202236235762e1c871ad0ccb60c8ee5ba337b9a",
+          "trust_remote_code": false,
+          "seed": 20261014,
+          "n_train": 20000,
+          "n_val": 15000,
+          "n_test": 15000,
+          "max_seq_len": 32768,
+          "gen_reserve_tokens": 4096,
+          "max_target_tokens": 6500,
+          "min_body_chars": 2000,
+          "max_body_chars": 160000,
+          "section_kinds": [
+            "body",
+            "captions"
+          ],
+          "lora_r": 64,
+          "lora_alpha": 128,
+          "lora_dropout": 0.0,
+          "lora_targets": [
+            "q_proj",
+            "k_proj",
+            "v_proj",
+            "o_proj",
+            "in_proj_qkv",
+            "out_proj",
+            "gate_proj",
+            "up_proj",
+            "down_proj"
+          ],
+          "lr": 0.0001,
+          "warmup_frac": 0.01,
+          "decay_frac": 0.1,
+          "decay_floor": 0.1,
+          "grad_accum": 4,
+          "max_grad_norm": 1.0,
+          "adam_betas": [
+            0.9,
+            0.95
+          ],
+          "weight_decay": 0.0,
+          "use_liger": false,
+          "loss_impl": "head_slice",
+          "gradient_checkpointing": true,
+          "log_every_steps": 5,
+          "save_every_examples": 2500,
+          "milestones": [
+            500,
+            1000,
+            2500,
+            5000,
+            10000,
+            20000
+          ],
+          "loss_eval_every": 2500,
+          "loss_eval_n": 200,
+          "curve_eval_n": 1000,
+          "faithfulness_n": 300,
+          "gen_max_new_tokens": 3000,
+          "gen_temperature": 0.0,
+          "nli_model": "microsoft/deberta-large-mnli",
+          "bertscore_model": "roberta-large",
+          "bertscore_layer": 17,
+          "judge_api_key": "***REDACTED***",
+          "judge_model": "qwen38-27b",
+          "judge_max_tokens": 1024,
+          "judge_thinking": false,
+          "judge_n": 1000,
+          "judge_enabled": false,
+          "judge_source_chars": 9000
+        },
+        "params_total": 9101652480,
+        "params_trainable": 147849216,
+        "trainable_pct": 1.624,
+        "dtypes": [
+          "torch.float32"
+        ],
+        "base_model": "Qwen/Qwen3.5-9B",
+        "seed": 20261014,
+        "max_seq_len": 32768,
+        "prompt_version": "ft-grobid-v1",
+        "slurm_job": "4563024",
+        "host": "an A100 node"
+      },
+      "state": {
+        "examples": 20000,
+        "step": 2500,
+        "tokens": 271219044,
+        "target_tokens": 20118064,
+        "seconds": 61176.0,
+        "chunks": 1,
+        "skipped_steps": 0,
+        "milestones_done": [
+          500,
+          1000,
+          2500,
+          5000,
+          10000,
+          20000
+        ],
+        "finished": true
+      },
+      "train_points": 500,
+      "median_tokens_per_s_per_rank": 2298.7,
+      "peak_vram_gib": 38.07,
+      "val_loss": [
+        {
+          "examples": 0,
+          "loss": 0.70006,
+          "papers": 200,
+          "target_tokens_per_paper": 999.4,
+          "nats_per_paper": 699.6
+        },
+        {
+          "examples": 504,
+          "loss": 0.49699,
+          "papers": 200,
+          "target_tokens_per_paper": 999.4,
+          "nats_per_paper": 496.7
+        },
+        {
+          "examples": 1000,
+          "loss": 0.48751,
+          "papers": 200,
+          "target_tokens_per_paper": 999.4,
+          "nats_per_paper": 487.2
+        },
+        {
+          "examples": 2504,
+          "loss": 0.4797,
+          "papers": 200,
+          "target_tokens_per_paper": 999.4,
+          "nats_per_paper": 479.4
+        },
+        {
+          "examples": 5000,
+          "loss": 0.47212,
+          "papers": 200,
+          "target_tokens_per_paper": 999.4,
+          "nats_per_paper": 471.8
+        },
+        {
+          "examples": 7504,
+          "loss": 0.46768,
+          "papers": 200,
+          "target_tokens_per_paper": 999.4,
+          "nats_per_paper": 467.4
+        },
+        {
+          "examples": 10000,
+          "loss": 0.46674,
+          "papers": 200,
+          "target_tokens_per_paper": 999.4,
+          "nats_per_paper": 466.4
+        },
+        {
+          "examples": 12504,
+          "loss": 0.46306,
+          "papers": 200,
+          "target_tokens_per_paper": 999.4,
+          "nats_per_paper": 462.8
+        },
+        {
+          "examples": 15000,
+          "loss": 0.46166,
+          "papers": 200,
+          "target_tokens_per_paper": 999.4,
+          "nats_per_paper": 461.4
+        },
+        {
+          "examples": 17504,
+          "loss": 0.46121,
+          "papers": 200,
+          "target_tokens_per_paper": 999.4,
+          "nats_per_paper": 460.9
+        },
+        {
+          "examples": 20000,
+          "loss": 0.44966,
+          "papers": 200,
+          "target_tokens_per_paper": 999.4,
+          "nats_per_paper": 449.4
+        }
+      ],
+      "label": "C",
+      "model": "Qwen/Qwen3.5-9B",
+      "tag": "qwen3.5-9b"
+    }
+  },
+  "dataset": {
+    "A": {
+      "splits": {
+        "train": {
+          "built": 70445,
+          "used": 70000,
+          "cap": 70000,
+          "prompt_tokens": {
+            "mean": 9412.6,
+            "median": 10306,
+            "p90": 13136,
+            "p99": 13294,
+            "max": 13312,
+            "min": 450,
+            "sum": 658885239
+          },
+          "target_tokens": {
+            "mean": 1011.1,
+            "median": 995,
+            "p90": 1258,
+            "p99": 1517,
+            "max": 2463,
+            "min": 368,
+            "sum": 70773596
+          },
+          "total_tokens": {
+            "mean": 10423.7,
+            "median": 11311,
+            "p90": 14232,
+            "p99": 14625,
+            "max": 15282,
+            "min": 1254,
+            "sum": 729658835
+          },
+          "pages": {
+            "mean": 22.5,
+            "median": 16,
+            "p90": 44,
+            "p99": 115,
+            "max": 902,
+            "min": 1,
+            "sum": 1575425
+          },
+          "truncation": {
+            "sections": 19960,
+            "none": 50033,
+            "hard": 7
+          },
+          "fits_whole_body_pct": 60.58,
+          "teachers": {
+            "deepseek/deepseek-v4-flash-0731": 61493,
+            "deepseek/deepseek-v4.1-flash": 5654,
+            "meta/muse-spark-1.3-contributor": 2853
+          },
+          "cohorts": {
+            "top": 69308,
+            "random": 692
+          },
+          "teacher_prompt_tokens_mean": 13559.2
+        },
+        "val": {
+          "built": 15101,
+          "used": 15000,
+          "cap": 15000,
+          "prompt_tokens": {
+            "mean": 9384.2,
+            "median": 10238,
+            "p90": 13137,
+            "p99": 13297,
+            "max": 13312,
+            "min": 508,
+            "sum": 140762839
+          },
+          "target_tokens": {
+            "mean": 1011.7,
+            "median": 997,
+            "p90": 1258,
+            "p99": 1510,
+            "max": 1874,
+            "min": 453,
+            "sum": 15175001
+          },
+          "total_tokens": {
+            "mean": 10395.9,
+            "median": 11237,
+            "p90": 14238,
+            "p99": 14627,
+            "max": 15137,
+            "min": 1178,
+            "sum": 155937840
+          },
+          "pages": {
+            "mean": 22.6,
+            "median": 16,
+            "p90": 44,
+            "p99": 111,
+            "max": 774,
+            "min": 1,
+            "sum": 338625
+          },
+          "truncation": {
+            "none": 10780,
+            "sections": 4220
+          },
+          "fits_whole_body_pct": 60.9,
+          "teachers": {
+            "meta/muse-spark-1.3-contributor": 611,
+            "deepseek/deepseek-v4-flash-0731": 13175,
+            "deepseek/deepseek-v4.1-flash": 1214
+          },
+          "cohorts": {
+            "random": 148,
+            "top": 14852
+          },
+          "teacher_prompt_tokens_mean": 13522.4
+        },
+        "test": {
+          "built": 15098,
+          "used": 15000,
+          "cap": 15000,
+          "prompt_tokens": {
+            "mean": 9331.0,
+            "median": 10074,
+            "p90": 13133,
+            "p99": 13296,
+            "max": 13312,
+            "min": 452,
+            "sum": 139964711
+          },
+          "target_tokens": {
+            "mean": 1008.5,
+            "median": 994,
+            "p90": 1253,
+            "p99": 1512,
+            "max": 2224,
+            "min": 433,
+            "sum": 15127437
+          },
+          "total_tokens": {
+            "mean": 10339.5,
+            "median": 11069,
+            "p90": 14232,
+            "p99": 14628,
+            "max": 15448,
+            "min": 1214,
+            "sum": 155092148
+          },
+          "pages": {
+            "mean": 22.1,
+            "median": 16,
+            "p90": 43,
+            "p99": 111,
+            "max": 492,
+            "min": 1,
+            "sum": 330862
+          },
+          "truncation": {
+            "sections": 4143,
+            "none": 10856,
+            "hard": 1
+          },
+          "fits_whole_body_pct": 61.41,
+          "teachers": {
+            "deepseek/deepseek-v4-flash-0731": 13181,
+            "deepseek/deepseek-v4.1-flash": 1209,
+            "meta/muse-spark-1.3-contributor": 610
+          },
+          "cohorts": {
+            "top": 14853,
+            "random": 147
+          },
+          "teacher_prompt_tokens_mean": 13362.2
+        }
+      },
+      "build": {
+        "train": {
+          "split": "train",
+          "parts": 36,
+          "parts_expected": null,
+          "papers": 70445,
+          "prompt_tokens": 663044516,
+          "target_tokens": 71219419,
+          "drops": {},
+          "build_seconds": 5508.3
+        },
+        "val": {
+          "split": "val",
+          "parts": 8,
+          "parts_expected": null,
+          "papers": 15101,
+          "prompt_tokens": 141677127,
+          "target_tokens": 15276057,
+          "drops": {},
+          "build_seconds": 1063.6
+        },
+        "test": {
+          "split": "test",
+          "parts": 8,
+          "parts_expected": null,
+          "papers": 15098,
+          "prompt_tokens": 140888020,
+          "target_tokens": 15226639,
+          "drops": {},
+          "build_seconds": 955.2
+        }
+      },
+      "index": {
+        "eligible": 100644,
+        "summary_records": 100826,
+        "drops": {
+          "bad_summary:contributions_count": 85,
+          "duplicate_title": 72,
+          "short_body": 13,
+          "abstract_only": 10,
+          "bad_summary:repetitive": 1,
+          "bad_summary:keywords_count": 1
+        },
+        "dropped_total": 182,
+        "teachers": {
+          "meta/muse-spark-1.3-contributor": 4098,
+          "deepseek/deepseek-v4.1-flash": 8142,
+          "deepseek/deepseek-v4-flash-0731": 88404
+        },
+        "cohorts": {
+          "top": 99649,
+          "random": 995
+        },
+        "seconds": 87.1,
+        "index_bytes": 596980758,
+        "base_model": "Qwen/Qwen3-4B-Instruct-2507",
+        "seed": 20261014,
+        "max_seq_len": 16384,
+        "prompt_version": "ft-grobid-v1",
+        "slurm_job": "4469285",
+        "host": "a compute node"
+      },
+      "split_plan": {
+        "seed": 20261014,
+        "candidates": {
+          "train": 70445,
+          "val": 15101,
+          "test": 15098
+        },
+        "caps": {
+          "train": 70000,
+          "val": 15000,
+          "test": 15000
+        },
+        "strata": [
+          {
+            "teacher": "deepseek/deepseek-v4-flash-0731",
+            "cohort": "random",
+            "papers": 4,
+            "val": 1,
+            "test": 0,
+            "train": 3
+          },
+          {
+            "teacher": "deepseek/deepseek-v4-flash-0731",
+            "cohort": "top",
+            "papers": 88400,
+            "val": 13263,
+            "test": 13263,
+            "train": 61874
+          },
+          {
+            "teacher": "deepseek/deepseek-v4.1-flash",
+            "cohort": "random",
+            "papers": 581,
+            "val": 87,
+            "test": 87,
+            "train": 407
+          },
+          {
+            "teacher": "deepseek/deepseek-v4.1-flash",
+            "cohort": "top",
+            "papers": 7561,
+            "val": 1135,
+            "test": 1134,
+            "train": 5292
+          },
+          {
+            "teacher": "meta/muse-spark-1.3-contributor",
+            "cohort": "random",
+            "papers": 410,
+            "val": 62,
+            "test": 61,
+            "train": 287
+          },
+          {
+            "teacher": "meta/muse-spark-1.3-contributor",
+            "cohort": "top",
+            "papers": 3688,
+            "val": 553,
+            "test": 553,
+            "train": 2582
+          }
+        ],
+        "milestones": [
+          1000,
+          5000,
+          10000,
+          20000,
+          50000,
+          70000
+        ],
+        "base_model": "Qwen/Qwen3-4B-Instruct-2507",
+        "max_seq_len": 16384,
+        "prompt_version": "ft-grobid-v1",
+        "slurm_job": "4469285",
+        "host": "a compute node",
+        "curve_eval_n": 1000,
+        "loss_eval_n": 200
+      },
+      "curve_eval": 1000,
+      "loss_eval": 200,
+      "settings": {
+        "max_seq_len": 16384,
+        "gen_reserve_tokens": 3072,
+        "max_prompt_tokens": 13312,
+        "max_target_tokens": 6500,
+        "grad_accum": 8,
+        "seed": 20261014
+      },
+      "base_model": "Qwen/Qwen3-4B-Instruct-2507",
+      "seed": 20261014,
+      "max_seq_len": 16384,
+      "prompt_version": "ft-grobid-v1",
+      "slurm_job": "4519945",
+      "host": "a CPU node",
+      "training_cost": {
+        "examples": 70000,
+        "optimiser_steps": 8750,
+        "tokens_per_epoch": 729658835,
+        "target_tokens_per_epoch": 70773596,
+        "milestones": {
+          "1000": 1000,
+          "5000": 5000,
+          "10000": 10000,
+          "20000": 20000,
+          "50000": 50000,
+          "70000": 70000
+        }
+      }
+    },
+    "B": {
+      "splits": {
+        "train": {
+          "built": 70445,
+          "used": 70000,
+          "cap": 70000,
+          "prompt_tokens": {
+            "mean": 9094.6,
+            "median": 9776,
+            "p90": 13062,
+            "p99": 13290,
+            "max": 13312,
+            "min": 446,
+            "sum": 636618608
+          },
+          "target_tokens": {
+            "mean": 933.4,
+            "median": 920,
+            "p90": 1152,
+            "p99": 1380,
+            "max": 2118,
+            "min": 330,
+            "sum": 65337362
+          },
+          "total_tokens": {
+            "mean": 10027.9,
+            "median": 10712,
+            "p90": 14068,
+            "p99": 14481,
+            "max": 15171,
+            "min": 1179,
+            "sum": 701955970
+          },
+          "pages": {
+            "mean": 22.5,
+            "median": 16,
+            "p90": 44,
+            "p99": 115,
+            "max": 902,
+            "min": 1,
+            "sum": 1575425
+          },
+          "truncation": {
+            "sections": 12834,
+            "none": 57162,
+            "hard": 4
+          },
+          "fits_whole_body_pct": 62.99,
+          "teachers": {
+            "deepseek/deepseek-v4-flash-0731": 61493,
+            "deepseek/deepseek-v4.1-flash": 5654,
+            "meta/muse-spark-1.3-contributor": 2853
+          },
+          "cohorts": {
+            "top": 69308,
+            "random": 692
+          },
+          "teacher_prompt_tokens_mean": 13559.2
+        },
+        "val": {
+          "built": 15101,
+          "used": 15000,
+          "cap": 15000,
+          "prompt_tokens": {
+            "mean": 9063.8,
+            "median": 9698,
+            "p90": 13048,
+            "p99": 13290,
+            "max": 13312,
+            "min": 504,
+            "sum": 135956274
+          },
+          "target_tokens": {
+            "mean": 934.0,
+            "median": 922,
+            "p90": 1156,
+            "p99": 1371,
+            "max": 1733,
+            "min": 441,
+            "sum": 14009790
+          },
+          "total_tokens": {
+            "mean": 9997.7,
+            "median": 10614,
+            "p90": 14061,
+            "p99": 14479,
+            "max": 14912,
+            "min": 1157,
+            "sum": 149966064
+          },
+          "pages": {
+            "mean": 22.6,
+            "median": 16,
+            "p90": 44,
+            "p99": 111,
+            "max": 774,
+            "min": 1,
+            "sum": 338625
+          },
+          "truncation": {
+            "none": 12262,
+            "sections": 2737,
+            "hard": 1
+          },
+          "fits_whole_body_pct": 63.15,
+          "teachers": {
+            "meta/muse-spark-1.3-contributor": 611,
+            "deepseek/deepseek-v4-flash-0731": 13175,
+            "deepseek/deepseek-v4.1-flash": 1214
+          },
+          "cohorts": {
+            "random": 148,
+            "top": 14852
+          },
+          "teacher_prompt_tokens_mean": 13522.4
+        },
+        "test": {
+          "built": 15098,
+          "used": 15000,
+          "cap": 15000,
+          "prompt_tokens": {
+            "mean": 9009.1,
+            "median": 9569,
+            "p90": 13049,
+            "p99": 13288,
+            "max": 13312,
+            "min": 437,
+            "sum": 135136297
+          },
+          "target_tokens": {
+            "mean": 931.1,
+            "median": 917,
+            "p90": 1148,
+            "p99": 1372,
+            "max": 1974,
+            "min": 417,
+            "sum": 13965808
+          },
+          "total_tokens": {
+            "mean": 9940.1,
+            "median": 10481,
+            "p90": 14053,
+            "p99": 14476,
+            "max": 15286,
+            "min": 1140,
+            "sum": 149102105
+          },
+          "pages": {
+            "mean": 22.1,
+            "median": 16,
+            "p90": 43,
+            "p99": 111,
+            "max": 492,
+            "min": 1,
+            "sum": 330862
+          },
+          "truncation": {
+            "none": 12356,
+            "sections": 2643,
+            "hard": 1
+          },
+          "fits_whole_body_pct": 63.67,
+          "teachers": {
+            "deepseek/deepseek-v4-flash-0731": 13181,
+            "deepseek/deepseek-v4.1-flash": 1209,
+            "meta/muse-spark-1.3-contributor": 610
+          },
+          "cohorts": {
+            "top": 14853,
+            "random": 147
+          },
+          "teacher_prompt_tokens_mean": 13362.2
+        }
+      },
+      "build": {
+        "train": {
+          "split": "train",
+          "parts": 36,
+          "parts_expected": null,
+          "papers": 70445,
+          "prompt_tokens": 640634227,
+          "target_tokens": 65748767,
+          "drops": {},
+          "build_seconds": 9604.4
+        },
+        "val": {
+          "split": "val",
+          "parts": 8,
+          "parts_expected": null,
+          "papers": 15101,
+          "prompt_tokens": 136832557,
+          "target_tokens": 14102978,
+          "drops": {},
+          "build_seconds": 1879.6
+        },
+        "test": {
+          "split": "test",
+          "parts": 8,
+          "parts_expected": null,
+          "papers": 15098,
+          "prompt_tokens": 136021596,
+          "target_tokens": 14057367,
+          "drops": {},
+          "build_seconds": 2150.4
+        }
+      },
+      "index": {
+        "eligible": 100644,
+        "summary_records": 100826,
+        "drops": {
+          "bad_summary:contributions_count": 85,
+          "duplicate_title": 72,
+          "short_body": 13,
+          "abstract_only": 10,
+          "bad_summary:repetitive": 1,
+          "bad_summary:keywords_count": 1
+        },
+        "dropped_total": 182,
+        "teachers": {
+          "meta/muse-spark-1.3-contributor": 4098,
+          "deepseek/deepseek-v4.1-flash": 8142,
+          "deepseek/deepseek-v4-flash-0731": 88404
+        },
+        "cohorts": {
+          "top": 99649,
+          "random": 995
+        },
+        "seconds": 87.1,
+        "index_bytes": 596980758,
+        "base_model": "Qwen/Qwen3-4B-Instruct-2507",
+        "seed": 20261014,
+        "max_seq_len": 16384,
+        "prompt_version": "ft-grobid-v1",
+        "slurm_job": "4469285",
+        "host": "a compute node"
+      },
+      "split_plan": {
+        "seed": 20261014,
+        "candidates": {
+          "train": 70445,
+          "val": 15101,
+          "test": 15098
+        },
+        "caps": {
+          "train": 70000,
+          "val": 15000,
+          "test": 15000
+        },
+        "strata": [
+          {
+            "teacher": "deepseek/deepseek-v4-flash-0731",
+            "cohort": "random",
+            "papers": 4,
+            "val": 1,
+            "test": 0,
+            "train": 3
+          },
+          {
+            "teacher": "deepseek/deepseek-v4-flash-0731",
+            "cohort": "top",
+            "papers": 88400,
+            "val": 13263,
+            "test": 13263,
+            "train": 61874
+          },
+          {
+            "teacher": "deepseek/deepseek-v4.1-flash",
+            "cohort": "random",
+            "papers": 581,
+            "val": 87,
+            "test": 87,
+            "train": 407
+          },
+          {
+            "teacher": "deepseek/deepseek-v4.1-flash",
+            "cohort": "top",
+            "papers": 7561,
+            "val": 1135,
+            "test": 1134,
+            "train": 5292
+          },
+          {
+            "teacher": "meta/muse-spark-1.3-contributor",
+            "cohort": "random",
+            "papers": 410,
+            "val": 62,
+            "test": 61,
+            "train": 287
+          },
+          {
+            "teacher": "meta/muse-spark-1.3-contributor",
+            "cohort": "top",
+            "papers": 3688,
+            "val": 553,
+            "test": 553,
+            "train": 2582
+          }
+        ],
+        "milestones": [
+          1000,
+          5000,
+          10000,
+          20000,
+          50000,
+          70000
+        ],
+        "base_model": "Qwen/Qwen3-4B-Instruct-2507",
+        "max_seq_len": 16384,
+        "prompt_version": "ft-grobid-v1",
+        "slurm_job": "4469285",
+        "host": "a compute node",
+        "curve_eval_n": 1000,
+        "loss_eval_n": 200
+      },
+      "curve_eval": 1000,
+      "loss_eval": 200,
+      "settings": {
+        "max_seq_len": 16384,
+        "gen_reserve_tokens": 3072,
+        "max_prompt_tokens": 13312,
+        "max_target_tokens": 6500,
+        "grad_accum": 8,
+        "seed": 20261014
+      },
+      "base_model": "IFM/K2-Horizon-7B",
+      "seed": 20261014,
+      "max_seq_len": 16384,
+      "prompt_version": "ft-grobid-v1",
+      "slurm_job": "4519946",
+      "host": "the MIG-slice node",
+      "training_cost": {
+        "examples": 70000,
+        "optimiser_steps": 8750,
+        "tokens_per_epoch": 701955970,
+        "target_tokens_per_epoch": 65337362,
+        "milestones": {
+          "1000": 1000,
+          "5000": 5000,
+          "10000": 10000,
+          "20000": 20000,
+          "50000": 50000,
+          "70000": 70000
+        }
+      }
+    },
+    "C": {
+      "splits": {
+        "train": {
+          "built": 22000,
+          "used": 20000,
+          "cap": 20000,
+          "prompt_tokens": {
+            "mean": 12602.7,
+            "median": 10624,
+            "p90": 25458,
+            "p99": 28567,
+            "max": 28671,
+            "min": 529,
+            "sum": 252053261
+          },
+          "target_tokens": {
+            "mean": 1009.0,
+            "median": 992,
+            "p90": 1255,
+            "p99": 1517,
+            "max": 2295,
+            "min": 411,
+            "sum": 20180330
+          },
+          "total_tokens": {
+            "mean": 13611.7,
+            "median": 11626,
+            "p90": 26599,
+            "p99": 29694,
+            "max": 30571,
+            "min": 1419,
+            "sum": 272233591
+          },
+          "pages": {
+            "mean": 22.3,
+            "median": 16,
+            "p90": 44,
+            "p99": 118,
+            "max": 426,
+            "min": 1,
+            "sum": 446626
+          },
+          "truncation": {
+            "none": 18642,
+            "sections": 1357,
+            "hard": 1
+          },
+          "fits_whole_body_pct": 91.14,
+          "teachers": {
+            "deepseek/deepseek-v4-flash-0731": 17605,
+            "deepseek/deepseek-v4.1-flash": 1570,
+            "meta/muse-spark-1.3-contributor": 825
+          },
+          "cohorts": {
+            "top": 19818,
+            "random": 182
+          },
+          "teacher_prompt_tokens_mean": 13486.5
+        },
+        "val": {
+          "built": 15101,
+          "used": 15000,
+          "cap": 15000,
+          "prompt_tokens": {
+            "mean": 12618.7,
+            "median": 10563,
+            "p90": 25777,
+            "p99": 28564,
+            "max": 28672,
+            "min": 523,
+            "sum": 189280369
+          },
+          "target_tokens": {
+            "mean": 1010.2,
+            "median": 995,
+            "p90": 1257,
+            "p99": 1503,
+            "max": 1871,
+            "min": 455,
+            "sum": 15153562
+          },
+          "total_tokens": {
+            "mean": 13628.9,
+            "median": 11567,
+            "p90": 26899,
+            "p99": 29679,
+            "max": 30403,
+            "min": 1196,
+            "sum": 204433931
+          },
+          "pages": {
+            "mean": 22.6,
+            "median": 16,
+            "p90": 44,
+            "p99": 111,
+            "max": 774,
+            "min": 1,
+            "sum": 338625
+          },
+          "truncation": {
+            "none": 13972,
+            "sections": 1028
+          },
+          "fits_whole_body_pct": 90.74,
+          "teachers": {
+            "meta/muse-spark-1.3-contributor": 611,
+            "deepseek/deepseek-v4-flash-0731": 13175,
+            "deepseek/deepseek-v4.1-flash": 1214
+          },
+          "cohorts": {
+            "random": 148,
+            "top": 14852
+          },
+          "teacher_prompt_tokens_mean": 13522.4
+        },
+        "test": {
+          "built": 15098,
+          "used": 15000,
+          "cap": 15000,
+          "prompt_tokens": {
+            "mean": 12454.1,
+            "median": 10397,
+            "p90": 25405,
+            "p99": 28563,
+            "max": 28671,
+            "min": 464,
+            "sum": 186812083
+          },
+          "target_tokens": {
+            "mean": 1007.1,
+            "median": 992,
+            "p90": 1250,
+            "p99": 1510,
+            "max": 2223,
+            "min": 435,
+            "sum": 15106567
+          },
+          "total_tokens": {
+            "mean": 13461.2,
+            "median": 11379,
+            "p90": 26516,
+            "p99": 29670,
+            "max": 30697,
+            "min": 1439,
+            "sum": 201918650
+          },
+          "pages": {
+            "mean": 22.1,
+            "median": 16,
+            "p90": 43,
+            "p99": 111,
+            "max": 492,
+            "min": 1,
+            "sum": 330862
+          },
+          "truncation": {
+            "none": 14031,
+            "sections": 968,
+            "hard": 1
+          },
+          "fits_whole_body_pct": 91.22,
+          "teachers": {
+            "deepseek/deepseek-v4-flash-0731": 13181,
+            "deepseek/deepseek-v4.1-flash": 1209,
+            "meta/muse-spark-1.3-contributor": 610
+          },
+          "cohorts": {
+            "top": 14853,
+            "random": 147
+          },
+          "teacher_prompt_tokens_mean": 13362.2
+        }
+      },
+      "build": {
+        "train": {
+          "split": "train",
+          "parts": 11,
+          "parts_expected": null,
+          "papers": 22000,
+          "prompt_tokens": 277080012,
+          "target_tokens": 22189481,
+          "drops": {},
+          "build_seconds": 1080.7
+        },
+        "val": {
+          "split": "val",
+          "parts": 8,
+          "parts_expected": null,
+          "papers": 15101,
+          "prompt_tokens": 190460025,
+          "target_tokens": 15254573,
+          "drops": {},
+          "build_seconds": 794.7
+        },
+        "test": {
+          "split": "test",
+          "parts": 8,
+          "parts_expected": null,
+          "papers": 15098,
+          "prompt_tokens": 188102249,
+          "target_tokens": 15205607,
+          "drops": {},
+          "build_seconds": 782.2
+        }
+      },
+      "index": {
+        "eligible": 100644,
+        "summary_records": 100826,
+        "drops": {
+          "bad_summary:contributions_count": 85,
+          "duplicate_title": 72,
+          "short_body": 13,
+          "abstract_only": 10,
+          "bad_summary:repetitive": 1,
+          "bad_summary:keywords_count": 1
+        },
+        "dropped_total": 182,
+        "teachers": {
+          "meta/muse-spark-1.3-contributor": 4098,
+          "deepseek/deepseek-v4.1-flash": 8142,
+          "deepseek/deepseek-v4-flash-0731": 88404
+        },
+        "cohorts": {
+          "top": 99649,
+          "random": 995
+        },
+        "seconds": 87.1,
+        "index_bytes": 596980758,
+        "base_model": "Qwen/Qwen3-4B-Instruct-2507",
+        "seed": 20261014,
+        "max_seq_len": 16384,
+        "prompt_version": "ft-grobid-v1",
+        "slurm_job": "4469285",
+        "host": "a compute node"
+      },
+      "split_plan": {
+        "seed": 20261014,
+        "candidates": {
+          "train": 70445,
+          "val": 15101,
+          "test": 15098
+        },
+        "caps": {
+          "train": 70000,
+          "val": 15000,
+          "test": 15000
+        },
+        "strata": [
+          {
+            "teacher": "deepseek/deepseek-v4-flash-0731",
+            "cohort": "random",
+            "papers": 4,
+            "val": 1,
+            "test": 0,
+            "train": 3
+          },
+          {
+            "teacher": "deepseek/deepseek-v4-flash-0731",
+            "cohort": "top",
+            "papers": 88400,
+            "val": 13263,
+            "test": 13263,
+            "train": 61874
+          },
+          {
+            "teacher": "deepseek/deepseek-v4.1-flash",
+            "cohort": "random",
+            "papers": 581,
+            "val": 87,
+            "test": 87,
+            "train": 407
+          },
+          {
+            "teacher": "deepseek/deepseek-v4.1-flash",
+            "cohort": "top",
+            "papers": 7561,
+            "val": 1135,
+            "test": 1134,
+            "train": 5292
+          },
+          {
+            "teacher": "meta/muse-spark-1.3-contributor",
+            "cohort": "random",
+            "papers": 410,
+            "val": 62,
+            "test": 61,
+            "train": 287
+          },
+          {
+            "teacher": "meta/muse-spark-1.3-contributor",
+            "cohort": "top",
+            "papers": 3688,
+            "val": 553,
+            "test": 553,
+            "train": 2582
+          }
+        ],
+        "milestones": [
+          1000,
+          5000,
+          10000,
+          20000,
+          50000,
+          70000
+        ],
+        "base_model": "Qwen/Qwen3-4B-Instruct-2507",
+        "max_seq_len": 16384,
+        "prompt_version": "ft-grobid-v1",
+        "slurm_job": "4469285",
+        "host": "a compute node",
+        "curve_eval_n": 1000,
+        "loss_eval_n": 200
+      },
+      "curve_eval": 1000,
+      "loss_eval": 200,
+      "settings": {
+        "max_seq_len": 32768,
+        "gen_reserve_tokens": 4096,
+        "max_prompt_tokens": 28672,
+        "max_target_tokens": 6500,
+        "grad_accum": 8,
+        "seed": 20261014
+      },
+      "base_model": "Qwen/Qwen3.5-9B",
+      "seed": 20261014,
+      "max_seq_len": 32768,
+      "prompt_version": "ft-grobid-v1",
+      "slurm_job": "4519947",
+      "host": "a CPU node",
+      "training_cost": {
+        "examples": 20000,
+        "optimiser_steps": 2500,
+        "tokens_per_epoch": 272233591,
+        "target_tokens_per_epoch": 20180330,
+        "milestones": {
+          "500": 500,
+          "1000": 1000,
+          "2500": 2500,
+          "5000": 5000,
+          "10000": 10000,
+          "20000": 20000
+        }
+      }
+    },
+    "current_build_json": {
+      "splits": {
+        "train": {
+          "built": 22000,
+          "used": 20000,
+          "cap": 20000,
+          "prompt_tokens": {
+            "mean": 12602.7,
+            "median": 10624,
+            "p90": 25458,
+            "p99": 28567,
+            "max": 28671,
+            "min": 529,
+            "sum": 252053261
+          },
+          "target_tokens": {
+            "mean": 1009.0,
+            "median": 992,
+            "p90": 1255,
+            "p99": 1517,
+            "max": 2295,
+            "min": 411,
+            "sum": 20180330
+          },
+          "total_tokens": {
+            "mean": 13611.7,
+            "median": 11626,
+            "p90": 26599,
+            "p99": 29694,
+            "max": 30571,
+            "min": 1419,
+            "sum": 272233591
+          },
+          "pages": {
+            "mean": 22.3,
+            "median": 16,
+            "p90": 44,
+            "p99": 118,
+            "max": 426,
+            "min": 1,
+            "sum": 446626
+          },
+          "truncation": {
+            "none": 18642,
+            "sections": 1357,
+            "hard": 1
+          },
+          "fits_whole_body_pct": 91.14,
+          "teachers": {
+            "deepseek/deepseek-v4-flash-0731": 17605,
+            "deepseek/deepseek-v4.1-flash": 1570,
+            "meta/muse-spark-1.3-contributor": 825
+          },
+          "cohorts": {
+            "top": 19818,
+            "random": 182
+          },
+          "teacher_prompt_tokens_mean": 13486.5
+        },
+        "val": {
+          "built": 15101,
+          "used": 15000,
+          "cap": 15000,
+          "prompt_tokens": {
+            "mean": 12618.7,
+            "median": 10563,
+            "p90": 25777,
+            "p99": 28564,
+            "max": 28672,
+            "min": 523,
+            "sum": 189280369
+          },
+          "target_tokens": {
+            "mean": 1010.2,
+            "median": 995,
+            "p90": 1257,
+            "p99": 1503,
+            "max": 1871,
+            "min": 455,
+            "sum": 15153562
+          },
+          "total_tokens": {
+            "mean": 13628.9,
+            "median": 11567,
+            "p90": 26899,
+            "p99": 29679,
+            "max": 30403,
+            "min": 1196,
+            "sum": 204433931
+          },
+          "pages": {
+            "mean": 22.6,
+            "median": 16,
+            "p90": 44,
+            "p99": 111,
+            "max": 774,
+            "min": 1,
+            "sum": 338625
+          },
+          "truncation": {
+            "none": 13972,
+            "sections": 1028
+          },
+          "fits_whole_body_pct": 90.74,
+          "teachers": {
+            "meta/muse-spark-1.3-contributor": 611,
+            "deepseek/deepseek-v4-flash-0731": 13175,
+            "deepseek/deepseek-v4.1-flash": 1214
+          },
+          "cohorts": {
+            "random": 148,
+            "top": 14852
+          },
+          "teacher_prompt_tokens_mean": 13522.4
+        },
+        "test": {
+          "built": 15098,
+          "used": 15000,
+          "cap": 15000,
+          "prompt_tokens": {
+            "mean": 12454.1,
+            "median": 10397,
+            "p90": 25405,
+            "p99": 28563,
+            "max": 28671,
+            "min": 464,
+            "sum": 186812083
+          },
+          "target_tokens": {
+            "mean": 1007.1,
+            "median": 992,
+            "p90": 1250,
+            "p99": 1510,
+            "max": 2223,
+            "min": 435,
+            "sum": 15106567
+          },
+          "total_tokens": {
+            "mean": 13461.2,
+            "median": 11379,
+            "p90": 26516,
+            "p99": 29670,
+            "max": 30697,
+            "min": 1439,
+            "sum": 201918650
+          },
+          "pages": {
+            "mean": 22.1,
+            "median": 16,
+            "p90": 43,
+            "p99": 111,
+            "max": 492,
+            "min": 1,
+            "sum": 330862
+          },
+          "truncation": {
+            "none": 14031,
+            "sections": 968,
+            "hard": 1
+          },
+          "fits_whole_body_pct": 91.22,
+          "teachers": {
+            "deepseek/deepseek-v4-flash-0731": 13181,
+            "deepseek/deepseek-v4.1-flash": 1209,
+            "meta/muse-spark-1.3-contributor": 610
+          },
+          "cohorts": {
+            "top": 14853,
+            "random": 147
+          },
+          "teacher_prompt_tokens_mean": 13362.2
+        }
+      },
+      "build": {
+        "train": {
+          "split": "train",
+          "parts": 11,
+          "parts_expected": null,
+          "papers": 22000,
+          "prompt_tokens": 277080012,
+          "target_tokens": 22189481,
+          "drops": {},
+          "build_seconds": 1080.7
+        },
+        "val": {
+          "split": "val",
+          "parts": 8,
+          "parts_expected": null,
+          "papers": 15101,
+          "prompt_tokens": 190460025,
+          "target_tokens": 15254573,
+          "drops": {},
+          "build_seconds": 794.7
+        },
+        "test": {
+          "split": "test",
+          "parts": 8,
+          "parts_expected": null,
+          "papers": 15098,
+          "prompt_tokens": 188102249,
+          "target_tokens": 15205607,
+          "drops": {},
+          "build_seconds": 782.2
+        }
+      },
+      "index": {
+        "eligible": 100644,
+        "summary_records": 100826,
+        "drops": {
+          "bad_summary:contributions_count": 85,
+          "duplicate_title": 72,
+          "short_body": 13,
+          "abstract_only": 10,
+          "bad_summary:repetitive": 1,
+          "bad_summary:keywords_count": 1
+        },
+        "dropped_total": 182,
+        "teachers": {
+          "meta/muse-spark-1.3-contributor": 4098,
+          "deepseek/deepseek-v4.1-flash": 8142,
+          "deepseek/deepseek-v4-flash-0731": 88404
+        },
+        "cohorts": {
+          "top": 99649,
+          "random": 995
+        },
+        "seconds": 87.1,
+        "index_bytes": 596980758,
+        "base_model": "Qwen/Qwen3-4B-Instruct-2507",
+        "seed": 20261014,
+        "max_seq_len": 16384,
+        "prompt_version": "ft-grobid-v1",
+        "slurm_job": "4469285",
+        "host": "a compute node"
+      },
+      "split_plan": {
+        "seed": 20261014,
+        "candidates": {
+          "train": 70445,
+          "val": 15101,
+          "test": 15098
+        },
+        "caps": {
+          "train": 70000,
+          "val": 15000,
+          "test": 15000
+        },
+        "strata": [
+          {
+            "teacher": "deepseek/deepseek-v4-flash-0731",
+            "cohort": "random",
+            "papers": 4,
+            "val": 1,
+            "test": 0,
+            "train": 3
+          },
+          {
+            "teacher": "deepseek/deepseek-v4-flash-0731",
+            "cohort": "top",
+            "papers": 88400,
+            "val": 13263,
+            "test": 13263,
+            "train": 61874
+          },
+          {
+            "teacher": "deepseek/deepseek-v4.1-flash",
+            "cohort": "random",
+            "papers": 581,
+            "val": 87,
+            "test": 87,
+            "train": 407
+          },
+          {
+            "teacher": "deepseek/deepseek-v4.1-flash",
+            "cohort": "top",
+            "papers": 7561,
+            "val": 1135,
+            "test": 1134,
+            "train": 5292
+          },
+          {
+            "teacher": "meta/muse-spark-1.3-contributor",
+            "cohort": "random",
+            "papers": 410,
+            "val": 62,
+            "test": 61,
+            "train": 287
+          },
+          {
+            "teacher": "meta/muse-spark-1.3-contributor",
+            "cohort": "top",
+            "papers": 3688,
+            "val": 553,
+            "test": 553,
+            "train": 2582
+          }
+        ],
+        "milestones": [
+          1000,
+          5000,
+          10000,
+          20000,
+          50000,
+          70000
+        ],
+        "base_model": "Qwen/Qwen3-4B-Instruct-2507",
+        "max_seq_len": 16384,
+        "prompt_version": "ft-grobid-v1",
+        "slurm_job": "4469285",
+        "host": "a compute node",
+        "curve_eval_n": 1000,
+        "loss_eval_n": 200
+      },
+      "curve_eval": 1000,
+      "loss_eval": 200,
+      "settings": {
+        "max_seq_len": 32768,
+        "gen_reserve_tokens": 4096,
+        "max_prompt_tokens": 28672,
+        "max_target_tokens": 6500,
+        "grad_accum": 8,
+        "seed": 20261014
+      },
+      "base_model": "Qwen/Qwen3.5-9B",
+      "seed": 20261014,
+      "max_seq_len": 32768,
+      "prompt_version": "ft-grobid-v1",
+      "slurm_job": "4519947",
+      "host": "a CPU node",
+      "training_cost": {
+        "examples": 20000,
+        "optimiser_steps": 2500,
+        "tokens_per_epoch": 272233591,
+        "target_tokens_per_epoch": 20180330,
+        "milestones": {
+          "500": 500,
+          "1000": 1000,
+          "2500": 2500,
+          "5000": 5000,
+          "10000": 10000,
+          "20000": 20000
+        }
+      }
+    }
+  }
+}

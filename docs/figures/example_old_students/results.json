@@ -1,0 +1,1442 @@
+{
+ "schema": "scisum.results/1",
+ "created": "2026-11-17T12:33:43Z",
+ "inputs": {
+  "fact_dirs": [
+   "factcheck"
+  ],
+  "claim_dir": "claimcheck",
+  "claim_model": "qwen38-27b",
+  "alpha": 0.05,
+  "bonferroni_k": 1,
+  "common_papers": true
+ },
+ "teacher": {
+  "recall": {
+   "papers": 299,
+   "mean_ci": [
+    0.6182274247491638,
+    0.6011705685618729,
+    0.6354515050167224
+   ]
+  },
+  "strict_recall": {
+   "papers": 299,
+   "mean_ci": [
+    0.5090301003344482,
+    0.49030100334448157,
+    0.52876254180602
+   ]
+  },
+  "unsupported_share": {
+   "papers": 298,
+   "mean_ci": [
+    0.029295875762177064,
+    0.021930669465232703,
+    0.03772187816268172
+   ]
+  }
+ },
+ "systems": [
+  {
+   "name": "A Qwen3-4B 70k",
+   "student": "A",
+   "stage": "sft",
+   "anchor": false,
+   "params": 4154588672,
+   "reference": null,
+   "runs": [
+    {
+     "run": "main",
+     "eval": "test-ex70000-n15000"
+    }
+   ],
+   "measures": {
+    "recall": {
+     "papers": 299,
+     "mean_ci": [
+      0.5267558528428093,
+      0.5070234113712374,
+      0.5461538461538462
+     ]
+    },
+    "strict_recall": {
+     "papers": 299,
+     "mean_ci": [
+      0.4217391304347826,
+      0.4006688963210702,
+      0.4421404682274247
+     ]
+    },
+    "length_ratio": {
+     "papers": 1246,
+     "mean_ci": [
+      0.9683211878009631,
+      0.957515569823435,
+      0.9791255216693419
+     ]
+    },
+    "rougeL": {
+     "papers": 1246,
+     "mean_ci": [
+      0.4433671348314606,
+      0.4383351605136437,
+      0.4479440690208668
+     ]
+    },
+    "bertscore": {
+     "papers": 1246,
+     "mean_ci": [
+      0.4183623756019262,
+      0.40967605136436597,
+      0.4258342455858748
+     ]
+    },
+    "nli": {
+     "papers": 300,
+     "mean_ci": [
+      0.4519881,
+      0.43856886666666667,
+      0.46560166666666664
+     ]
+    },
+    "judge_faithfulness": {
+     "papers": 499,
+     "mean_ci": [
+      2.1422845691382766,
+      2.0721442885771544,
+      2.218436873747495
+     ]
+    },
+    "judge_delta": {
+     "papers": 499,
+     "mean_ci": [
+      -0.15280561122244488,
+      -0.1903807615230461,
+      -0.11623246492985972
+     ]
+    },
+    "json_ok": {
+     "papers": 1246,
+     "mean_ci": [
+      0.985553772070626,
+      0.978330658105939,
+      0.9919743178170144
+     ]
+    },
+    "out_tokens": {
+     "papers": 1246,
+     "mean_ci": [
+      974.760834670947,
+      958.900481540931,
+      991.7889245585875
+     ]
+    }
+   },
+   "vs_teacher": {
+    "recall": {
+     "papers": 299,
+     "diff_ci": [
+      -0.0914715719063545,
+      -0.10819397993311038,
+      -0.07575250836120401
+     ]
+    },
+    "strict_recall": {
+     "papers": 299,
+     "diff_ci": [
+      -0.08729096989966555,
+      -0.10635451505016723,
+      -0.06856187290969899
+     ]
+    }
+   },
+   "train": {
+    "runs": [
+     "main"
+    ],
+    "gpu_hours": 27.525,
+    "wall_hours": 13.763,
+    "peak_vram_gb": 16.48,
+    "gpu_types": [
+     "NVIDIA H200"
+    ],
+    "verification_gpu_hours": null,
+    "detail": [
+     {
+      "schema": "scisum.train_resources/1",
+      "run": "main",
+      "kind": "sft",
+      "missing": [],
+      "base_model": "Qwen/Qwen3-4B-Instruct-2507",
+      "params_total": 4154588672,
+      "params_trainable": 132120576,
+      "lr": 0.0001,
+      "chunks": 2,
+      "finished": true,
+      "interrupted_chunks": 1,
+      "world": 2,
+      "gpu_type": "NVIDIA H200",
+      "wall_hours": 13.763,
+      "gpu_hours": 27.525,
+      "steps": 8750,
+      "examples": 70000,
+      "tokens": 728505106,
+      "tokens_per_s_per_gpu": 7513.9,
+      "peak_vram_gb": 16.48,
+      "gpu_hours_per_1000_examples": 0.3932,
+      "final_train_loss": 0.64407,
+      "val_loss": [
+       {
+        "examples": 0,
+        "step": 0,
+        "loss_per_token": 1.32245,
+        "ppl": 3.753,
+        "papers": 200,
+        "nats_per_paper": 1322.89
+       },
+       {
+        "examples": 1000,
+        "step": 125,
+        "loss_per_token": 0.70277,
+        "ppl": 2.019,
+        "papers": 200,
+        "nats_per_paper": 703.0
+       },
+       {
+        "examples": 5000,
+        "step": 625,
+        "loss_per_token": 0.66677,
+        "ppl": 1.948,
+        "papers": 200,
+        "nats_per_paper": 666.99
+       },
+       {
+        "examples": 10000,
+        "step": 1250,
+        "loss_per_token": 0.65319,
+        "ppl": 1.922,
+        "papers": 200,
+        "nats_per_paper": 653.41
+       },
+       {
+        "examples": 20000,
+        "step": 2500,
+        "loss_per_token": 0.6392,
+        "ppl": 1.895,
+        "papers": 200,
+        "nats_per_paper": 639.41
+       },
+       {
+        "examples": 30000,
+        "step": 3750,
+        "loss_per_token": 0.63207,
+        "ppl": 1.882,
+        "papers": 200,
+        "nats_per_paper": 632.28
+       },
+       {
+        "examples": 40000,
+        "step": 5000,
+        "loss_per_token": 0.6277,
+        "ppl": 1.873,
+        "papers": 200,
+        "nats_per_paper": 627.91
+       },
+       {
+        "examples": 50000,
+        "step": 6250,
+        "loss_per_token": 0.62525,
+        "ppl": 1.869,
+        "papers": 200,
+        "nats_per_paper": 625.46
+       },
+       {
+        "examples": 60000,
+        "step": 7500,
+        "loss_per_token": 0.62246,
+        "ppl": 1.864,
+        "papers": 200,
+        "nats_per_paper": 622.67
+       },
+       {
+        "examples": 70000,
+        "step": 8750,
+        "loss_per_token": 0.603,
+        "ppl": 1.828,
+        "papers": 200,
+        "nats_per_paper": 603.2
+       }
+      ]
+     }
+    ]
+   },
+   "serving": {
+    "cost_source": "manual: test evaluation run, 15,000 papers, 16,640-token window",
+    "gpu_type": "H200",
+    "gpus": 1,
+    "gpu_s_per_paper": 0.6954102920723227,
+    "papers_per_hour": 5176.8,
+    "output_tokens_per_s": 1407.3
+   },
+   "missing": [
+    "main: no claim check for label 'A' (qwen38-27b)"
+   ],
+   "flat": {
+    "name": "A Qwen3-4B 70k",
+    "student": "A",
+    "stage": "sft",
+    "anchor": false,
+    "params_b": 4.155,
+    "recall": 0.5267558528428093,
+    "recall_lo": 0.5070234113712374,
+    "recall_hi": 0.5461538461538462,
+    "recall_papers": 299,
+    "recall_vs_teacher": -0.0914715719063545,
+    "strict_recall": 0.4217391304347826,
+    "unsupported_share": null,
+    "unsupported_lo": null,
+    "unsupported_hi": null,
+    "length_ratio": 0.9683211878009631,
+    "rougeL": 0.4433671348314606,
+    "bertscore": 0.4183623756019262,
+    "nli": 0.4519881,
+    "judge_faithfulness": 2.1422845691382766,
+    "json_ok": 0.985553772070626,
+    "recall_vs_reference": null,
+    "recall_p_vs_reference": null,
+    "criteria_all_four": null,
+    "train_gpu_hours": 27.525,
+    "train_peak_vram_gb": 16.48,
+    "gpu_s_per_paper": 0.6954102920723227,
+    "papers_per_hour": 5176.8,
+    "ttft_p50_s": null,
+    "e2e_p50_s": null,
+    "e2e_p95_s": null,
+    "serve_weights_gb": null,
+    "kv_gb_per_paper_p95": null,
+    "serve_gpu_type": "H200",
+    "cost_source": "manual: test evaluation run, 15,000 papers, 16,640-token window",
+    "missing": 1
+   }
+  },
+  {
+   "name": "B K2-Horizon-7B 70k",
+   "student": "B",
+   "stage": "sft",
+   "anchor": false,
+   "params": 9173766144,
+   "reference": null,
+   "runs": [
+    {
+     "run": "k2",
+     "eval": "test-ex70000-n15000"
+    }
+   ],
+   "measures": {
+    "recall": {
+     "papers": 299,
+     "mean_ci": [
+      0.5719063545150501,
+      0.5548494983277592,
+      0.5911371237458194
+     ]
+    },
+    "strict_recall": {
+     "papers": 299,
+     "mean_ci": [
+      0.4658862876254181,
+      0.4468227424749164,
+      0.4862876254180602
+     ]
+    },
+    "length_ratio": {
+     "papers": 1246,
+     "mean_ci": [
+      0.9917532102728732,
+      0.9817053772070625,
+      1.0012913322632424
+     ]
+    },
+    "rougeL": {
+     "papers": 1246,
+     "mean_ci": [
+      0.4695110754414125,
+      0.46479916532905297,
+      0.4741550240770465
+     ]
+    },
+    "bertscore": {
+     "papers": 1246,
+     "mean_ci": [
+      0.4431123274478331,
+      0.43572263242375603,
+      0.44994288121990367
+     ]
+    },
+    "nli": {
+     "papers": 300,
+     "mean_ci": [
+      0.41845086666666664,
+      0.4048202,
+      0.43253306666666663
+     ]
+    },
+    "judge_faithfulness": {
+     "papers": 499,
+     "mean_ci": [
+      2.1963927855711423,
+      2.1222444889779557,
+      2.270541082164329
+     ]
+    },
+    "judge_delta": {
+     "papers": 499,
+     "mean_ci": [
+      -0.053607214428857713,
+      -0.09418837675350701,
+      -0.014529058116232466
+     ]
+    },
+    "json_ok": {
+     "papers": 1246,
+     "mean_ci": [
+      0.9911717495987159,
+      0.985553772070626,
+      0.9959871589085072
+     ]
+    },
+    "out_tokens": {
+     "papers": 1246,
+     "mean_ci": [
+      923.2696629213483,
+      910.3715890850723,
+      937.9317817014446
+     ]
+    }
+   },
+   "vs_teacher": {
+    "recall": {
+     "papers": 299,
+     "diff_ci": [
+      -0.04632107023411371,
+      -0.061538461538461535,
+      -0.03110367892976589
+     ]
+    },
+    "strict_recall": {
+     "papers": 299,
+     "diff_ci": [
+      -0.0431438127090301,
+      -0.06220735785953178,
+      -0.023411371237458192
+     ]
+    }
+   },
+   "train": {
+    "runs": [
+     "k2"
+    ],
+    "gpu_hours": 33.246,
+    "wall_hours": 16.623,
+    "peak_vram_gb": 29.63,
+    "gpu_types": [
+     "NVIDIA H200"
+    ],
+    "verification_gpu_hours": null,
+    "detail": [
+     {
+      "schema": "scisum.train_resources/1",
+      "run": "k2",
+      "kind": "sft",
+      "missing": [],
+      "base_model": "IFM/K2-Horizon-7B",
+      "params_total": 9173766144,
+      "params_trainable": 174587904,
+      "lr": 0.0001,
+      "chunks": 1,
+      "finished": true,
+      "interrupted_chunks": 0,
+      "world": 2,
+      "gpu_type": "NVIDIA H200",
+      "wall_hours": 16.623,
+      "gpu_hours": 33.246,
+      "steps": 8750,
+      "examples": 70000,
+      "tokens": 700803142,
+      "tokens_per_s_per_gpu": 5949.6,
+      "peak_vram_gb": 29.63,
+      "gpu_hours_per_1000_examples": 0.4749,
+      "final_train_loss": 0.6133,
+      "val_loss": [
+       {
+        "examples": 0,
+        "step": 0,
+        "loss_per_token": 0.69875,
+        "ppl": 2.011,
+        "papers": 200,
+        "nats_per_paper": 643.78
+       },
+       {
+        "examples": 1000,
+        "step": 125,
+        "loss_per_token": 0.60298,
+        "ppl": 1.828,
+        "papers": 200,
+        "nats_per_paper": 555.55
+       },
+       {
+        "examples": 5000,
+        "step": 625,
+        "loss_per_token": 0.58523,
+        "ppl": 1.795,
+        "papers": 200,
+        "nats_per_paper": 539.19
+       },
+       {
+        "examples": 10000,
+        "step": 1250,
+        "loss_per_token": 0.57829,
+        "ppl": 1.783,
+        "papers": 200,
+        "nats_per_paper": 532.8
+       },
+       {
+        "examples": 20000,
+        "step": 2500,
+        "loss_per_token": 0.57434,
+        "ppl": 1.776,
+        "papers": 200,
+        "nats_per_paper": 529.16
+       },
+       {
+        "examples": 30000,
+        "step": 3750,
+        "loss_per_token": 0.57093,
+        "ppl": 1.77,
+        "papers": 200,
+        "nats_per_paper": 526.02
+       },
+       {
+        "examples": 40000,
+        "step": 5000,
+        "loss_per_token": 0.56711,
+        "ppl": 1.763,
+        "papers": 200,
+        "nats_per_paper": 522.5
+       },
+       {
+        "examples": 50000,
+        "step": 6250,
+        "loss_per_token": 0.56734,
+        "ppl": 1.764,
+        "papers": 200,
+        "nats_per_paper": 522.71
+       },
+       {
+        "examples": 60000,
+        "step": 7500,
+        "loss_per_token": 0.56408,
+        "ppl": 1.758,
+        "papers": 200,
+        "nats_per_paper": 519.71
+       },
+       {
+        "examples": 70000,
+        "step": 8750,
+        "loss_per_token": 0.55147,
+        "ppl": 1.736,
+        "papers": 200,
+        "nats_per_paper": 508.09
+       }
+      ]
+     }
+    ]
+   },
+   "serving": {
+    "cost_source": "manual: test evaluation run, 15,000 papers, 16,640-token window",
+    "gpu_type": "H200",
+    "gpus": 1,
+    "gpu_s_per_paper": 0.889679715302491,
+    "papers_per_hour": 4046.4000000000005,
+    "output_tokens_per_s": 1041.9
+   },
+   "missing": [
+    "k2: no claim check for label 'B' (qwen38-27b)"
+   ],
+   "flat": {
+    "name": "B K2-Horizon-7B 70k",
+    "student": "B",
+    "stage": "sft",
+    "anchor": false,
+    "params_b": 9.174,
+    "recall": 0.5719063545150501,
+    "recall_lo": 0.5548494983277592,
+    "recall_hi": 0.5911371237458194,
+    "recall_papers": 299,
+    "recall_vs_teacher": -0.04632107023411371,
+    "strict_recall": 0.4658862876254181,
+    "unsupported_share": null,
+    "unsupported_lo": null,
+    "unsupported_hi": null,
+    "length_ratio": 0.9917532102728732,
+    "rougeL": 0.4695110754414125,
+    "bertscore": 0.4431123274478331,
+    "nli": 0.41845086666666664,
+    "judge_faithfulness": 2.1963927855711423,
+    "json_ok": 0.9911717495987159,
+    "recall_vs_reference": null,
+    "recall_p_vs_reference": null,
+    "criteria_all_four": null,
+    "train_gpu_hours": 33.246,
+    "train_peak_vram_gb": 29.63,
+    "gpu_s_per_paper": 0.889679715302491,
+    "papers_per_hour": 4046.4000000000005,
+    "ttft_p50_s": null,
+    "e2e_p50_s": null,
+    "e2e_p95_s": null,
+    "serve_weights_gb": null,
+    "kv_gb_per_paper_p95": null,
+    "serve_gpu_type": "H200",
+    "cost_source": "manual: test evaluation run, 15,000 papers, 16,640-token window",
+    "missing": 1
+   }
+  },
+  {
+   "name": "C Qwen3.5-9B 20k",
+   "student": "C",
+   "stage": "sft",
+   "anchor": false,
+   "params": 9101652480,
+   "reference": null,
+   "runs": [
+    {
+     "run": "q35",
+     "eval": "test-ex20000-n15000"
+    }
+   ],
+   "measures": {
+    "recall": {
+     "papers": 299,
+     "mean_ci": [
+      0.5740802675585285,
+      0.557190635451505,
+      0.5911371237458194
+     ]
+    },
+    "strict_recall": {
+     "papers": 299,
+     "mean_ci": [
+      0.46321070234113715,
+      0.44481605351170567,
+      0.4816053511705686
+     ]
+    },
+    "unsupported_share": {
+     "papers": 298,
+     "mean_ci": [
+      0.03325761568633989,
+      0.02743346798322944,
+      0.039422540638712686
+     ]
+    },
+    "length_ratio": {
+     "papers": 1246,
+     "mean_ci": [
+      0.9913295345104334,
+      0.9823651685393259,
+      0.9999730337078652
+     ]
+    },
+    "rougeL": {
+     "papers": 1246,
+     "mean_ci": [
+      0.47883595505617976,
+      0.47545335473515254,
+      0.4823448876404494
+     ]
+    },
+    "bertscore": {
+     "papers": 1246,
+     "mean_ci": [
+      0.45834209470304976,
+      0.45381163723916534,
+      0.4628308426966292
+     ]
+    },
+    "nli": {
+     "papers": 300,
+     "mean_ci": [
+      0.4695157333333334,
+      0.45671543333333336,
+      0.4833155666666667
+     ]
+    },
+    "judge_faithfulness": {
+     "papers": 499,
+     "mean_ci": [
+      2.162324649298597,
+      2.092184368737475,
+      2.2384769539078158
+     ]
+    },
+    "judge_delta": {
+     "papers": 499,
+     "mean_ci": [
+      -0.057615230460921846,
+      -0.08466933867735471,
+      -0.031062124248496994
+     ]
+    },
+    "json_ok": {
+     "papers": 1246,
+     "mean_ci": [
+      0.9991974317817014,
+      0.9975922953451043,
+      1.0
+     ]
+    },
+    "out_tokens": {
+     "papers": 1246,
+     "mean_ci": [
+      955.1781701444622,
+      945.5064205457464,
+      964.9735152487962
+     ]
+    }
+   },
+   "vs_teacher": {
+    "recall": {
+     "papers": 299,
+     "diff_ci": [
+      -0.04414715719063545,
+      -0.05735785953177257,
+      -0.03043478260869565
+     ]
+    },
+    "strict_recall": {
+     "papers": 299,
+     "diff_ci": [
+      -0.045819397993311035,
+      -0.061872909698996656,
+      -0.028428093645484945
+     ]
+    },
+    "unsupported_share": {
+     "papers": 298,
+     "diff_ci": [
+      0.003961739924162826,
+      -0.003188460150031096,
+      0.011044926941529995
+     ]
+    }
+   },
+   "train": {
+    "runs": [
+     "q35"
+    ],
+    "gpu_hours": 33.974,
+    "wall_hours": 16.987,
+    "peak_vram_gb": 38.07,
+    "gpu_types": [
+     "NVIDIA A100-SXM4-80GB"
+    ],
+    "verification_gpu_hours": null,
+    "detail": [
+     {
+      "schema": "scisum.train_resources/1",
+      "run": "q35",
+      "kind": "sft",
+      "missing": [],
+      "base_model": "Qwen/Qwen3.5-9B",
+      "params_total": 9101652480,
+      "params_trainable": 147849216,
+      "lr": 0.0001,
+      "chunks": 1,
+      "finished": true,
+      "interrupted_chunks": 0,
+      "world": 2,
+      "gpu_type": "NVIDIA A100-SXM4-80GB",
+      "wall_hours": 16.987,
+      "gpu_hours": 33.974,
+      "steps": 2500,
+      "examples": 20000,
+      "tokens": 271219044,
+      "tokens_per_s_per_gpu": 2298.6,
+      "peak_vram_gb": 38.07,
+      "gpu_hours_per_1000_examples": 1.6987,
+      "final_train_loss": 0.50067,
+      "val_loss": [
+       {
+        "examples": 0,
+        "step": 0,
+        "loss_per_token": 0.70006,
+        "ppl": 2.014,
+        "papers": 200,
+        "nats_per_paper": 699.61
+       },
+       {
+        "examples": 504,
+        "step": 63,
+        "loss_per_token": 0.49699,
+        "ppl": 1.644,
+        "papers": 200,
+        "nats_per_paper": 496.67
+       },
+       {
+        "examples": 1000,
+        "step": 125,
+        "loss_per_token": 0.48751,
+        "ppl": 1.628,
+        "papers": 200,
+        "nats_per_paper": 487.2
+       },
+       {
+        "examples": 2504,
+        "step": 313,
+        "loss_per_token": 0.4797,
+        "ppl": 1.616,
+        "papers": 200,
+        "nats_per_paper": 479.39
+       },
+       {
+        "examples": 5000,
+        "step": 625,
+        "loss_per_token": 0.47212,
+        "ppl": 1.603,
+        "papers": 200,
+        "nats_per_paper": 471.82
+       },
+       {
+        "examples": 7504,
+        "step": 938,
+        "loss_per_token": 0.46768,
+        "ppl": 1.596,
+        "papers": 200,
+        "nats_per_paper": 467.38
+       },
+       {
+        "examples": 10000,
+        "step": 1250,
+        "loss_per_token": 0.46674,
+        "ppl": 1.595,
+        "papers": 200,
+        "nats_per_paper": 466.44
+       },
+       {
+        "examples": 12504,
+        "step": 1563,
+        "loss_per_token": 0.46306,
+        "ppl": 1.589,
+        "papers": 200,
+        "nats_per_paper": 462.76
+       },
+       {
+        "examples": 15000,
+        "step": 1875,
+        "loss_per_token": 0.46166,
+        "ppl": 1.587,
+        "papers": 200,
+        "nats_per_paper": 461.36
+       },
+       {
+        "examples": 17504,
+        "step": 2188,
+        "loss_per_token": 0.46121,
+        "ppl": 1.586,
+        "papers": 200,
+        "nats_per_paper": 460.91
+       },
+       {
+        "examples": 20000,
+        "step": 2500,
+        "loss_per_token": 0.44966,
+        "ppl": 1.568,
+        "papers": 200,
+        "nats_per_paper": 449.37
+       }
+      ]
+     }
+    ]
+   },
+   "serving": {
+    "cost_source": "manual: test evaluation run, 32,768-token window",
+    "gpu_type": "A100 80GB",
+    "gpus": 1,
+    "gpu_s_per_paper": 1.824817518248175,
+    "papers_per_hour": 1972.8000000000002,
+    "output_tokens_per_s": 527.8
+   },
+   "missing": [],
+   "flat": {
+    "name": "C Qwen3.5-9B 20k",
+    "student": "C",
+    "stage": "sft",
+    "anchor": false,
+    "params_b": 9.102,
+    "recall": 0.5740802675585285,
+    "recall_lo": 0.557190635451505,
+    "recall_hi": 0.5911371237458194,
+    "recall_papers": 299,
+    "recall_vs_teacher": -0.04414715719063545,
+    "strict_recall": 0.46321070234113715,
+    "unsupported_share": 0.03325761568633989,
+    "unsupported_lo": 0.02743346798322944,
+    "unsupported_hi": 0.039422540638712686,
+    "length_ratio": 0.9913295345104334,
+    "rougeL": 0.47883595505617976,
+    "bertscore": 0.45834209470304976,
+    "nli": 0.4695157333333334,
+    "judge_faithfulness": 2.162324649298597,
+    "json_ok": 0.9991974317817014,
+    "recall_vs_reference": null,
+    "recall_p_vs_reference": null,
+    "criteria_all_four": null,
+    "train_gpu_hours": 33.974,
+    "train_peak_vram_gb": 38.07,
+    "gpu_s_per_paper": 1.824817518248175,
+    "papers_per_hour": 1972.8000000000002,
+    "ttft_p50_s": null,
+    "e2e_p50_s": null,
+    "e2e_p95_s": null,
+    "serve_weights_gb": null,
+    "kv_gb_per_paper_p95": null,
+    "serve_gpu_type": "A100 80GB",
+    "cost_source": "manual: test evaluation run, 32,768-token window",
+    "missing": 0
+   }
+  },
+  {
+   "name": "prefcc (C + DPO)",
+   "student": "C",
+   "stage": "prefcc",
+   "anchor": false,
+   "params": 9101652480,
+   "reference": "C Qwen3.5-9B 20k",
+   "runs": [
+    {
+     "run": "q35prefcc",
+     "eval": "test-ex1233-n1246"
+    },
+    {
+     "run": "q35prefccs2",
+     "eval": "test-ex1233-n1246"
+    }
+   ],
+   "measures": {
+    "recall": {
+     "papers": 299,
+     "mean_ci": [
+      0.6032608695652174,
+      0.5868729096989966,
+      0.6204849498327759
+     ]
+    },
+    "strict_recall": {
+     "papers": 299,
+     "mean_ci": [
+      0.49448160535117053,
+      0.4774247491638796,
+      0.5130434782608696
+     ]
+    },
+    "unsupported_share": {
+     "papers": 298,
+     "mean_ci": [
+      0.03776948068709448,
+      0.03170407203474657,
+      0.04413338092626177
+     ]
+    },
+    "length_ratio": {
+     "papers": 1246,
+     "mean_ci": [
+      0.9878826645264849,
+      0.9793075441412521,
+      0.9965491573033709
+     ]
+    },
+    "rougeL": {
+     "papers": 1246,
+     "mean_ci": [
+      0.4735042576243981,
+      0.47003677367576246,
+      0.4769377849117175
+     ]
+    },
+    "bertscore": {
+     "papers": 1246,
+     "mean_ci": [
+      0.44984935393258424,
+      0.44485375601926164,
+      0.4546675240770465
+     ]
+    },
+    "nli": {
+     "papers": 300,
+     "mean_ci": [
+      0.44518993333333334,
+      0.43310528333333337,
+      0.45815514999999996
+     ]
+    },
+    "judge_faithfulness": {
+     "papers": 499,
+     "mean_ci": [
+      2.0721442885771544,
+      2.012024048096192,
+      2.1312625250501003
+     ]
+    },
+    "judge_delta": {
+     "papers": 499,
+     "mean_ci": [
+      -0.042585170340681364,
+      -0.06738476953907815,
+      -0.01778557114228457
+     ]
+    },
+    "json_ok": {
+     "papers": 1246,
+     "mean_ci": [
+      0.9971910112359551,
+      0.9943820224719101,
+      0.9995987158908507
+     ]
+    },
+    "out_tokens": {
+     "papers": 1246,
+     "mean_ci": [
+      997.3089887640449,
+      986.1428571428571,
+      1008.3639646869984
+     ]
+    }
+   },
+   "vs_teacher": {
+    "recall": {
+     "papers": 299,
+     "diff_ci": [
+      -0.014966555183946488,
+      -0.02801003344481605,
+      -0.002424749163879599
+     ]
+    },
+    "strict_recall": {
+     "papers": 299,
+     "diff_ci": [
+      -0.014548494983277592,
+      -0.03110367892976588,
+      0.0010033444816053487
+     ]
+    },
+    "unsupported_share": {
+     "papers": 298,
+     "diff_ci": [
+      0.008473604924917418,
+      0.0010982668796903712,
+      0.014905884740377727
+     ]
+    }
+   },
+   "train": {
+    "runs": [
+     "q35",
+     "q35prefcc"
+    ],
+    "gpu_hours": 36.09,
+    "wall_hours": 19.103,
+    "peak_vram_gb": 38.07,
+    "gpu_types": [
+     "NVIDIA A100-SXM4-80GB"
+    ],
+    "verification_gpu_hours": 7.281,
+    "detail": [
+     {
+      "schema": "scisum.train_resources/1",
+      "run": "q35",
+      "kind": "sft",
+      "missing": [],
+      "base_model": "Qwen/Qwen3.5-9B",
+      "params_total": 9101652480,
+      "params_trainable": 147849216,
+      "lr": 0.0001,
+      "chunks": 1,
+      "finished": true,
+      "interrupted_chunks": 0,
+      "world": 2,
+      "gpu_type": "NVIDIA A100-SXM4-80GB",
+      "wall_hours": 16.987,
+      "gpu_hours": 33.974,
+      "steps": 2500,
+      "examples": 20000,
+      "tokens": 271219044,
+      "tokens_per_s_per_gpu": 2298.6,
+      "peak_vram_gb": 38.07,
+      "gpu_hours_per_1000_examples": 1.6987,
+      "final_train_loss": 0.50067,
+      "val_loss": [
+       {
+        "examples": 0,
+        "step": 0,
+        "loss_per_token": 0.70006,
+        "ppl": 2.014,
+        "papers": 200,
+        "nats_per_paper": 699.61
+       },
+       {
+        "examples": 504,
+        "step": 63,
+        "loss_per_token": 0.49699,
+        "ppl": 1.644,
+        "papers": 200,
+        "nats_per_paper": 496.67
+       },
+       {
+        "examples": 1000,
+        "step": 125,
+        "loss_per_token": 0.48751,
+        "ppl": 1.628,
+        "papers": 200,
+        "nats_per_paper": 487.2
+       },
+       {
+        "examples": 2504,
+        "step": 313,
+        "loss_per_token": 0.4797,
+        "ppl": 1.616,
+        "papers": 200,
+        "nats_per_paper": 479.39
+       },
+       {
+        "examples": 5000,
+        "step": 625,
+        "loss_per_token": 0.47212,
+        "ppl": 1.603,
+        "papers": 200,
+        "nats_per_paper": 471.82
+       },
+       {
+        "examples": 7504,
+        "step": 938,
+        "loss_per_token": 0.46768,
+        "ppl": 1.596,
+        "papers": 200,
+        "nats_per_paper": 467.38
+       },
+       {
+        "examples": 10000,
+        "step": 1250,
+        "loss_per_token": 0.46674,
+        "ppl": 1.595,
+        "papers": 200,
+        "nats_per_paper": 466.44
+       },
+       {
+        "examples": 12504,
+        "step": 1563,
+        "loss_per_token": 0.46306,
+        "ppl": 1.589,
+        "papers": 200,
+        "nats_per_paper": 462.76
+       },
+       {
+        "examples": 15000,
+        "step": 1875,
+        "loss_per_token": 0.46166,
+        "ppl": 1.587,
+        "papers": 200,
+        "nats_per_paper": 461.36
+       },
+       {
+        "examples": 17504,
+        "step": 2188,
+        "loss_per_token": 0.46121,
+        "ppl": 1.586,
+        "papers": 200,
+        "nats_per_paper": 460.91
+       },
+       {
+        "examples": 20000,
+        "step": 2500,
+        "loss_per_token": 0.44966,
+        "ppl": 1.568,
+        "papers": 200,
+        "nats_per_paper": 449.37
+       }
+      ]
+     },
+     {
+      "schema": "scisum.train_resources/1",
+      "run": "q35prefcc",
+      "kind": "preference",
+      "missing": [],
+      "base_model": "Qwen/Qwen3.5-9B",
+      "params_total": 9101652480,
+      "params_trainable": 147849216,
+      "lr": 2e-05,
+      "chunks": 1,
+      "finished": true,
+      "interrupted_chunks": 0,
+      "world": 1,
+      "gpu_type": null,
+      "wall_hours": 2.116,
+      "gpu_hours": 2.116,
+      "steps": 155,
+      "examples": 1233,
+      "tokens": 33596486,
+      "tokens_per_s_per_gpu": 4410.3,
+      "peak_vram_gb": 37.18,
+      "gpu_hours_per_1000_examples": 1.7162,
+      "final_train_loss": 0.60959,
+      "val_loss": [
+       {
+        "examples": 0,
+        "step": 0,
+        "loss_per_token": 0.45,
+        "ppl": 1.568,
+        "papers": 200,
+        "nats_per_paper": 449.71
+       },
+       {
+        "examples": 504,
+        "step": 63,
+        "loss_per_token": 0.47849,
+        "ppl": 1.614,
+        "papers": 200,
+        "nats_per_paper": 478.18
+       },
+       {
+        "examples": 1000,
+        "step": 125,
+        "loss_per_token": 0.47558,
+        "ppl": 1.609,
+        "papers": 200,
+        "nats_per_paper": 475.27
+       },
+       {
+        "examples": 1233,
+        "step": 155,
+        "loss_per_token": 0.47788,
+        "ppl": 1.613,
+        "papers": 200,
+        "nats_per_paper": 477.57
+       }
+      ],
+      "final_pref_acc": 0.9091,
+      "final_margin": 3.4947
+     },
+     {
+      "schema": "scisum.train_resources/1",
+      "run": "q35prefccs2",
+      "kind": "preference",
+      "missing": [],
+      "base_model": "Qwen/Qwen3.5-9B",
+      "params_total": 9101652480,
+      "params_trainable": 147849216,
+      "lr": 2e-05,
+      "chunks": 1,
+      "finished": true,
+      "interrupted_chunks": 0,
+      "world": 1,
+      "gpu_type": null,
+      "wall_hours": 7.281,
+      "gpu_hours": 7.281,
+      "steps": 155,
+      "examples": 1233,
+      "tokens": 33596486,
+      "tokens_per_s_per_gpu": 1281.7,
+      "peak_vram_gb": 37.13,
+      "gpu_hours_per_1000_examples": 5.9054,
+      "final_train_loss": 0.65572,
+      "val_loss": [
+       {
+        "examples": 0,
+        "step": 0,
+        "loss_per_token": 0.44999,
+        "ppl": 1.568,
+        "papers": 200,
+        "nats_per_paper": 449.7
+       },
+       {
+        "examples": 504,
+        "step": 63,
+        "loss_per_token": 0.47694,
+        "ppl": 1.611,
+        "papers": 200,
+        "nats_per_paper": 476.63
+       },
+       {
+        "examples": 1000,
+        "step": 125,
+        "loss_per_token": 0.47868,
+        "ppl": 1.614,
+        "papers": 200,
+        "nats_per_paper": 478.37
+       },
+       {
+        "examples": 1233,
+        "step": 155,
+        "loss_per_token": 0.47734,
+        "ppl": 1.612,
+        "papers": 200,
+        "nats_per_paper": 477.03
+       }
+      ],
+      "final_pref_acc": 0.9091,
+      "final_margin": 3.2266
+     }
+    ]
+   },
+   "serving": {
+    "cost_source": "manual: assumed equal to C: same base model and adapter rank",
+    "gpu_type": "A100 80GB",
+    "gpus": 1,
+    "gpu_s_per_paper": 1.824817518248175,
+    "papers_per_hour": 1972.8000000000002,
+    "output_tokens_per_s": 527.8
+   },
+   "missing": [],
+   "vs_reference": {
+    "reference": "C Qwen3.5-9B 20k",
+    "measures": {
+     "recall": {
+      "papers": 299,
+      "diff_ci": [
+       0.029180602006688962,
+       0.01806020066889632,
+       0.039799331103678934
+      ],
+      "p": 9.999000099990002e-05
+     },
+     "strict_recall": {
+      "papers": 299,
+      "diff_ci": [
+       0.03127090301003344,
+       0.01789297658862876,
+       0.04381270903010033
+      ]
+     },
+     "unsupported_share": {
+      "papers": 298,
+      "diff_ci": [
+       0.004511865000754593,
+       -0.0003369827796139912,
+       0.009266028441847561
+      ]
+     },
+     "length_ratio": {
+      "papers": 1246,
+      "diff_ci": [
+       -0.0034468699839486365,
+       -0.009368017656500803,
+       0.0020862760834670932
+      ]
+     },
+     "rougeL": {
+      "papers": 1246,
+      "diff_ci": [
+       -0.005331697431781702,
+       -0.007201316211878009,
+       -0.0035271027287319423
+      ]
+     },
+     "bertscore": {
+      "papers": 1246,
+      "diff_ci": [
+       -0.00849274077046549,
+       -0.011277355537720706,
+       -0.0059976284109149285
+      ]
+     },
+     "nli": {
+      "papers": 300,
+      "diff_ci": [
+       -0.0243258,
+       -0.034122733333333335,
+       -0.015150583333333332
+      ]
+     },
+     "judge_faithfulness": {
+      "papers": 499,
+      "diff_ci": [
+       -0.09018036072144289,
+       -0.14128256513026052,
+       -0.04008016032064128
+      ]
+     },
+     "judge_delta": {
+      "papers": 499,
+      "diff_ci": [
+       0.01503006012024048,
+       -0.008016032064128256,
+       0.037825651302605214
+      ]
+     },
+     "json_ok": {
+      "papers": 1246,
+      "diff_ci": [
+       -0.0020064205457463883,
+       -0.004414125200642055,
+       -0.0004012841091492777
+      ]
+     },
+     "out_tokens": {
+      "papers": 1246,
+      "diff_ci": [
+       42.13081861958266,
+       35.90489566613162,
+       49.15008025682183
+      ]
+     }
+    },
+    "criteria": {
+     "1_recall": true,
+     "2_length": true,
+     "3_reference": true,
+     "4_claims": true,
+     "all_four": true,
+     "alpha_per_comparison": 0.05
+    },
+    "length_ratio_paired_mean": 0.9878826645264849
+   },
+   "flat": {
+    "name": "prefcc (C + DPO)",
+    "student": "C",
+    "stage": "prefcc",
+    "anchor": false,
+    "params_b": 9.102,
+    "recall": 0.6032608695652174,
+    "recall_lo": 0.5868729096989966,
+    "recall_hi": 0.6204849498327759,
+    "recall_papers": 299,
+    "recall_vs_teacher": -0.014966555183946488,
+    "strict_recall": 0.49448160535117053,
+    "unsupported_share": 0.03776948068709448,
+    "unsupported_lo": 0.03170407203474657,
+    "unsupported_hi": 0.04413338092626177,
+    "length_ratio": 0.9878826645264849,
+    "rougeL": 0.4735042576243981,
+    "bertscore": 0.44984935393258424,
+    "nli": 0.44518993333333334,
+    "judge_faithfulness": 2.0721442885771544,
+    "json_ok": 0.9971910112359551,
+    "recall_vs_reference": 0.029180602006688962,
+    "recall_p_vs_reference": 9.999000099990002e-05,
+    "criteria_all_four": true,
+    "train_gpu_hours": 36.09,
+    "train_peak_vram_gb": 38.07,
+    "gpu_s_per_paper": 1.824817518248175,
+    "papers_per_hour": 1972.8000000000002,
+    "ttft_p50_s": null,
+    "e2e_p50_s": null,
+    "e2e_p95_s": null,
+    "serve_weights_gb": null,
+    "kv_gb_per_paper_p95": null,
+    "serve_gpu_type": "A100 80GB",
+    "cost_source": "manual: assumed equal to C: same base model and adapter rank",
+    "missing": 0
+   }
+  }
+ ]
+}

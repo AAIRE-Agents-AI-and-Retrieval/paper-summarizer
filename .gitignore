@@ -1,0 +1,29 @@
+# environments and caches
+.venv/
+.cache/
+__pycache__/
+*.pyc
+.ruff_cache/
+.pytest_cache/
+scisum.egg-info/
+*.sif
+
+# secrets
+.env
+.env.*
+
+# the packaged data (shipped beside the repository, never committed; docs/DATA.md) and everything built
+# from it: token shards, prompts, runs, logs, pipeline state. Anchored so paper_docs/data stays tracked.
+/data/
+/runs/
+/state/
+/logs/
+*.log
+reports/curves/
+reports/*.png
+reports/*.svg
+
+# derived from paper text; generated locally, never distributed (data policy, docs/DATA.md)
+paper_docs/samples/
+paper_docs/data/factcheck/questions.jsonl.gz
+slurm/site/local.sh

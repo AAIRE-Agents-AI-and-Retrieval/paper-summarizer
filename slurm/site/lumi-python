@@ -1,0 +1,32 @@
+#!/usr/bin/env bash
+# `python`, inside the LUMI runtime container. slurm/site/lumi.sh sets PY to this file, so every
+# `$PY ...` and `$SCISUM ...` in the job scripts runs in the container without knowing it.
+#
+#   SUM_SIF                 the container image (.sif) with ROCm PyTorch + vLLM (containers/lumi/README.md)
+#   SUM_VENV                optional overlay venv (created with --system-site-packages inside the container)
+#   SUM_SINGULARITY_BINDS   comma-separated host paths to bind (default: LUMI's file systems that exist)
+#   SUM_SINGULARITY_ARGS    extra arguments for `singularity exec`
+#
+# Called again from inside the container (a stage's command runs `$PY`), it runs python directly: there is
+# no singularity inside the container.
+if [ -n "${SINGULARITY_CONTAINER:-}${APPTAINER_CONTAINER:-}" ]; then
+  if [ -n "${SUM_VENV:-}" ] && [ "${VIRTUAL_ENV:-}" != "$SUM_VENV" ]; then
+    # shellcheck disable=SC1091
+    source "$SUM_VENV/bin/activate"
+  fi
+  exec python "$@"
+fi
+if [ -z "${SUM_SIF:-}" ] || [ ! -f "${SUM_SIF:-}" ]; then
+  echo "lumi-python: SUM_SIF='${SUM_SIF:-}' is not a container image; set it in slurm/site/local.sh (docs/LUMI.md)" >&2
+  exit 127
+fi
+binds=""
+IFS=',' read -r -a want <<< "${SUM_SINGULARITY_BINDS:-/pfs,/scratch,/project,/projappl,/flash,/appl}"
+for b in "${want[@]}"; do
+  [ -e "${b%%:*}" ] && binds="${binds:+$binds,}$b"
+done
+# shellcheck disable=SC2086
+exec singularity exec ${SUM_SINGULARITY_ARGS:-} ${binds:+-B "$binds"} "$SUM_SIF" bash -c '
+  if [ -n "${WITH_CONDA:-}" ]; then eval "$WITH_CONDA"; fi    # LUMI AI containers activate their conda env this way
+  if [ -n "${SUM_VENV:-}" ]; then source "$SUM_VENV/bin/activate"; fi
+  exec python "$@"' lumi-python "$@"

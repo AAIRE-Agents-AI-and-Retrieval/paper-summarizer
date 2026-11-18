@@ -1,0 +1,778 @@
+{
+ "n_in_splits": 100000,
+ "train": {
+  "n": 70000,
+  "cohort": {
+   "top": 69308,
+   "random": 692
+  },
+  "teacher": {
+   "meta/muse-spark-1.3-contributor": 2853,
+   "deepseek/deepseek-v4.1-flash": 5654,
+   "deepseek/deepseek-v4-flash-0731": 61493
+  },
+  "year": {
+   "1990": 1,
+   "1991": 26,
+   "1992": 171,
+   "1993": 370,
+   "1994": 458,
+   "1995": 697,
+   "1996": 857,
+   "1997": 955,
+   "1998": 1305,
+   "1999": 1412,
+   "2000": 1600,
+   "2001": 1859,
+   "2002": 1965,
+   "2003": 2187,
+   "2004": 2148,
+   "2005": 2372,
+   "2006": 2554,
+   "2007": 2665,
+   "2008": 2864,
+   "2009": 2817,
+   "2010": 3014,
+   "2011": 3162,
+   "2012": 3251,
+   "2013": 3390,
+   "2014": 3132,
+   "2015": 3332,
+   "2016": 3491,
+   "2017": 3680,
+   "2018": 3915,
+   "2019": 3710,
+   "2020": 2997,
+   "2021": 1801,
+   "2022": 838,
+   "2023": 559,
+   "2024": 244,
+   "2025": 101,
+   "2026": 100
+  },
+  "archive": [
+   [
+    "astro-ph",
+    17525
+   ],
+   [
+    "cond-mat",
+    14992
+   ],
+   [
+    "cs",
+    9818
+   ],
+   [
+    "physics",
+    4691
+   ],
+   [
+    "hep-ph",
+    4628
+   ],
+   [
+    "quant-ph",
+    4558
+   ],
+   [
+    "hep-th",
+    3700
+   ],
+   [
+    "math",
+    1989
+   ],
+   [
+    "gr-qc",
+    1927
+   ],
+   [
+    "nucl-th",
+    999
+   ],
+   [
+    "stat",
+    943
+   ],
+   [
+    "q-bio",
+    845
+   ],
+   [
+    "hep-ex",
+    842
+   ],
+   [
+    "eess",
+    818
+   ],
+   [
+    "nlin",
+    508
+   ],
+   [
+    "hep-lat",
+    433
+   ],
+   [
+    "nucl-ex",
+    412
+   ],
+   [
+    "math-ph",
+    185
+   ],
+   [
+    "q-fin",
+    121
+   ],
+   [
+    "econ",
+    66
+   ]
+  ],
+  "primary_top20": [
+   [
+    "astro-ph",
+    8297
+   ],
+   [
+    "hep-ph",
+    4628
+   ],
+   [
+    "quant-ph",
+    4558
+   ],
+   [
+    "hep-th",
+    3700
+   ],
+   [
+    "cond-mat.mes-hall",
+    3577
+   ],
+   [
+    "cond-mat.mtrl-sci",
+    3490
+   ],
+   [
+    "cs.CV",
+    3039
+   ],
+   [
+    "astro-ph.CO",
+    2670
+   ],
+   [
+    "astro-ph.GA",
+    1944
+   ],
+   [
+    "gr-qc",
+    1927
+   ],
+   [
+    "cs.LG",
+    1875
+   ],
+   [
+    "cond-mat.str-el",
+    1856
+   ],
+   [
+    "cond-mat.stat-mech",
+    1503
+   ],
+   [
+    "astro-ph.SR",
+    1502
+   ],
+   [
+    "astro-ph.HE",
+    1493
+   ],
+   [
+    "physics.optics",
+    1363
+   ],
+   [
+    "cond-mat.supr-con",
+    1317
+   ],
+   [
+    "cond-mat.soft",
+    1115
+   ],
+   [
+    "astro-ph.EP",
+    1111
+   ],
+   [
+    "nucl-th",
+    999
+   ]
+  ],
+  "n_primary": 151,
+  "pages_median_p90": [
+   16.0,
+   44
+  ],
+  "summary_tokens_median_p90": [
+   1890.0,
+   3015
+  ],
+  "top_cohort_rank_range": [
+   1,
+   99999
+  ]
+ },
+ "by_archive_test_rougeL": [
+  {
+   "archive": "astro-ph",
+   "n_test": 3791,
+   "n_train": 17525,
+   "A": 0.4309,
+   "B": 0.4585,
+   "C": 0.4718
+  },
+  {
+   "archive": "cond-mat",
+   "n_test": 3136,
+   "n_train": 14992,
+   "A": 0.4604,
+   "B": 0.4843,
+   "C": 0.4883
+  },
+  {
+   "archive": "cs",
+   "n_test": 2081,
+   "n_train": 9818,
+   "A": 0.4534,
+   "B": 0.4825,
+   "C": 0.4868
+  },
+  {
+   "archive": "physics",
+   "n_test": 1018,
+   "n_train": 4691,
+   "A": 0.4497,
+   "B": 0.4739,
+   "C": 0.4802
+  },
+  {
+   "archive": "hep-ph",
+   "n_test": 1009,
+   "n_train": 4628,
+   "A": 0.4227,
+   "B": 0.4483,
+   "C": 0.4652
+  },
+  {
+   "archive": "quant-ph",
+   "n_test": 1007,
+   "n_train": 4558,
+   "A": 0.4528,
+   "B": 0.4768,
+   "C": 0.4808
+  },
+  {
+   "archive": "hep-th",
+   "n_test": 795,
+   "n_train": 3700,
+   "A": 0.427,
+   "B": 0.4466,
+   "C": 0.4696
+  },
+  {
+   "archive": "math",
+   "n_test": 426,
+   "n_train": 1989,
+   "A": 0.4174,
+   "B": 0.4492,
+   "C": 0.4663
+  },
+  {
+   "archive": "gr-qc",
+   "n_test": 385,
+   "n_train": 1927,
+   "A": 0.4453,
+   "B": 0.4704,
+   "C": 0.48
+  },
+  {
+   "archive": "stat",
+   "n_test": 216,
+   "n_train": 943,
+   "A": 0.4213,
+   "B": 0.4629,
+   "C": 0.4707
+  },
+  {
+   "archive": "nucl-th",
+   "n_test": 206,
+   "n_train": 999,
+   "A": 0.4155,
+   "B": 0.438,
+   "C": 0.4653
+  },
+  {
+   "archive": "eess",
+   "n_test": 199,
+   "n_train": 818,
+   "A": 0.4659,
+   "B": 0.4861,
+   "C": 0.5019
+  },
+  {
+   "archive": "hep-ex",
+   "n_test": 170,
+   "n_train": 842,
+   "A": 0.4562,
+   "B": 0.4863,
+   "C": 0.4973
+  },
+  {
+   "archive": "q-bio",
+   "n_test": 165,
+   "n_train": 845,
+   "A": 0.4456,
+   "B": 0.4741,
+   "C": 0.4732
+  },
+  {
+   "archive": "hep-lat",
+   "n_test": 113,
+   "n_train": 433,
+   "A": 0.4382,
+   "B": 0.4575,
+   "C": 0.4784
+  },
+  {
+   "archive": "nucl-ex",
+   "n_test": 105,
+   "n_train": 412,
+   "A": 0.4685,
+   "B": 0.4884,
+   "C": 0.4967
+  },
+  {
+   "archive": "nlin",
+   "n_test": 98,
+   "n_train": 508,
+   "A": 0.4401,
+   "B": 0.4621,
+   "C": 0.4768
+  }
+ ],
+ "spearman_n_train_vs_rougeL": {
+  "A": -0.137,
+  "B": -0.176,
+  "C": -0.203
+ },
+ "by_year_test_rougeL": {
+  "2011-2015": {
+   "n": 3525,
+   "A": 0.4404,
+   "B": 0.4681,
+   "C": 0.4801
+  },
+  "2016-2019": {
+   "n": 3130,
+   "A": 0.443,
+   "B": 0.4703,
+   "C": 0.4784
+  },
+  "2020+": {
+   "n": 1420,
+   "A": 0.4435,
+   "B": 0.4704,
+   "C": 0.4817
+  },
+  "<=2010": {
+   "n": 6925,
+   "A": 0.4447,
+   "B": 0.4689,
+   "C": 0.4779
+  }
+ },
+ "by_cohort_test_rougeL": {
+  "random": {
+   "n": 147,
+   "A": 0.4025,
+   "B": 0.4261,
+   "C": 0.4303
+  },
+  "top": {
+   "n": 14853,
+   "A": 0.4436,
+   "B": 0.4696,
+   "C": 0.4794
+  }
+ },
+ "field_trend_val": {
+  "A": [
+   {
+    "ckpt": "base",
+    "rougeL": 0.3271,
+    "tldr": 0.4125,
+    "problem": 0.3211,
+    "contributions": 0.3283,
+    "method": 0.2493,
+    "results": 0.3004,
+    "limitations": 0.2021,
+    "bert_tldr": 0.3992,
+    "bert_problem": 0.357,
+    "bert_contributions": 0.288,
+    "bert_method": 0.1502,
+    "bert_results": 0.2334
+   },
+   {
+    "ckpt": "ex1000",
+    "rougeL": 0.4138,
+    "tldr": 0.5001,
+    "problem": 0.4251,
+    "contributions": 0.412,
+    "method": 0.3759,
+    "results": 0.3857,
+    "limitations": 0.2979,
+    "bert_tldr": 0.4917,
+    "bert_problem": 0.4551,
+    "bert_contributions": 0.3685,
+    "bert_method": 0.2955,
+    "bert_results": 0.332
+   },
+   {
+    "ckpt": "ex5000",
+    "rougeL": 0.4204,
+    "tldr": 0.5092,
+    "problem": 0.427,
+    "contributions": 0.4182,
+    "method": 0.3837,
+    "results": 0.3973,
+    "limitations": 0.3064,
+    "bert_tldr": 0.4995,
+    "bert_problem": 0.4557,
+    "bert_contributions": 0.3741,
+    "bert_method": 0.3031,
+    "bert_results": 0.3419
+   },
+   {
+    "ckpt": "ex10000",
+    "rougeL": 0.42,
+    "tldr": 0.5118,
+    "problem": 0.4373,
+    "contributions": 0.4187,
+    "method": 0.386,
+    "results": 0.3946,
+    "limitations": 0.298,
+    "bert_tldr": 0.5005,
+    "bert_problem": 0.4646,
+    "bert_contributions": 0.3752,
+    "bert_method": 0.3094,
+    "bert_results": 0.3366
+   },
+   {
+    "ckpt": "ex20000",
+    "rougeL": 0.4315,
+    "tldr": 0.5193,
+    "problem": 0.4401,
+    "contributions": 0.4276,
+    "method": 0.3979,
+    "results": 0.4044,
+    "limitations": 0.3135,
+    "bert_tldr": 0.5126,
+    "bert_problem": 0.4699,
+    "bert_contributions": 0.3905,
+    "bert_method": 0.3193,
+    "bert_results": 0.3509
+   },
+   {
+    "ckpt": "ex50000",
+    "rougeL": 0.4341,
+    "tldr": 0.5251,
+    "problem": 0.443,
+    "contributions": 0.4294,
+    "method": 0.4004,
+    "results": 0.4078,
+    "limitations": 0.3204,
+    "bert_tldr": 0.5149,
+    "bert_problem": 0.4684,
+    "bert_contributions": 0.3841,
+    "bert_method": 0.3245,
+    "bert_results": 0.3517
+   },
+   {
+    "ckpt": "ex70000",
+    "rougeL": 0.4448,
+    "tldr": 0.5322,
+    "problem": 0.4543,
+    "contributions": 0.4421,
+    "method": 0.4082,
+    "results": 0.42,
+    "limitations": 0.3302,
+    "bert_tldr": 0.5185,
+    "bert_problem": 0.4803,
+    "bert_contributions": 0.398,
+    "bert_method": 0.334,
+    "bert_results": 0.3656
+   }
+  ],
+  "B": [
+   {
+    "ckpt": "base",
+    "rougeL": 0.2774,
+    "tldr": 0.3487,
+    "problem": 0.2649,
+    "contributions": 0.2528,
+    "method": 0.2517,
+    "results": 0.2765,
+    "limitations": 0.2141,
+    "bert_tldr": 0.1894,
+    "bert_problem": 0.1485,
+    "bert_contributions": 0.0211,
+    "bert_method": -0.0011,
+    "bert_results": 0.0451
+   },
+   {
+    "ckpt": "ex1000",
+    "rougeL": 0.4474,
+    "tldr": 0.5282,
+    "problem": 0.4426,
+    "contributions": 0.4339,
+    "method": 0.4153,
+    "results": 0.4373,
+    "limitations": 0.3328,
+    "bert_tldr": 0.519,
+    "bert_problem": 0.474,
+    "bert_contributions": 0.3902,
+    "bert_method": 0.341,
+    "bert_results": 0.3804
+   },
+   {
+    "ckpt": "ex5000",
+    "rougeL": 0.4569,
+    "tldr": 0.5323,
+    "problem": 0.4497,
+    "contributions": 0.4505,
+    "method": 0.423,
+    "results": 0.445,
+    "limitations": 0.3441,
+    "bert_tldr": 0.5229,
+    "bert_problem": 0.4767,
+    "bert_contributions": 0.4106,
+    "bert_method": 0.3484,
+    "bert_results": 0.389
+   },
+   {
+    "ckpt": "ex10000",
+    "rougeL": 0.46,
+    "tldr": 0.5422,
+    "problem": 0.4652,
+    "contributions": 0.4513,
+    "method": 0.4227,
+    "results": 0.447,
+    "limitations": 0.347,
+    "bert_tldr": 0.5338,
+    "bert_problem": 0.4919,
+    "bert_contributions": 0.4125,
+    "bert_method": 0.3492,
+    "bert_results": 0.3912
+   },
+   {
+    "ckpt": "ex20000",
+    "rougeL": 0.4583,
+    "tldr": 0.5389,
+    "problem": 0.4504,
+    "contributions": 0.4522,
+    "method": 0.426,
+    "results": 0.4434,
+    "limitations": 0.3475,
+    "bert_tldr": 0.5273,
+    "bert_problem": 0.477,
+    "bert_contributions": 0.4054,
+    "bert_method": 0.3449,
+    "bert_results": 0.3864
+   },
+   {
+    "ckpt": "ex50000",
+    "rougeL": 0.4584,
+    "tldr": 0.5399,
+    "problem": 0.4623,
+    "contributions": 0.4519,
+    "method": 0.427,
+    "results": 0.4378,
+    "limitations": 0.3512,
+    "bert_tldr": 0.5273,
+    "bert_problem": 0.4864,
+    "bert_contributions": 0.4065,
+    "bert_method": 0.3485,
+    "bert_results": 0.3809
+   },
+   {
+    "ckpt": "ex70000",
+    "rougeL": 0.4683,
+    "tldr": 0.5449,
+    "problem": 0.4729,
+    "contributions": 0.4635,
+    "method": 0.4322,
+    "results": 0.452,
+    "limitations": 0.3586,
+    "bert_tldr": 0.5257,
+    "bert_problem": 0.4963,
+    "bert_contributions": 0.4178,
+    "bert_method": 0.3532,
+    "bert_results": 0.3936
+   }
+  ],
+  "C": [
+   {
+    "ckpt": "base",
+    "rougeL": 0.0774,
+    "tldr": 0.1028,
+    "problem": 0.073,
+    "contributions": 0.0761,
+    "method": 0.0504,
+    "results": 0.0617,
+    "limitations": 0.0577,
+    "bert_tldr": -0.262,
+    "bert_problem": -0.2509,
+    "bert_contributions": -0.3739,
+    "bert_method": -0.4263,
+    "bert_results": -0.4201
+   },
+   {
+    "ckpt": "ex500",
+    "rougeL": 0.4502,
+    "tldr": 0.5345,
+    "problem": 0.4513,
+    "contributions": 0.4508,
+    "method": 0.4103,
+    "results": 0.431,
+    "limitations": 0.3372,
+    "bert_tldr": 0.5265,
+    "bert_problem": 0.4814,
+    "bert_contributions": 0.4036,
+    "bert_method": 0.3316,
+    "bert_results": 0.3724
+   },
+   {
+    "ckpt": "ex1000",
+    "rougeL": 0.4597,
+    "tldr": 0.5383,
+    "problem": 0.4556,
+    "contributions": 0.4517,
+    "method": 0.4237,
+    "results": 0.4528,
+    "limitations": 0.3417,
+    "bert_tldr": 0.5335,
+    "bert_problem": 0.4848,
+    "bert_contributions": 0.4123,
+    "bert_method": 0.3551,
+    "bert_results": 0.402
+   },
+   {
+    "ckpt": "ex2500",
+    "rougeL": 0.4682,
+    "tldr": 0.5421,
+    "problem": 0.4655,
+    "contributions": 0.4575,
+    "method": 0.4353,
+    "results": 0.4566,
+    "limitations": 0.3574,
+    "bert_tldr": 0.5353,
+    "bert_problem": 0.4941,
+    "bert_contributions": 0.4175,
+    "bert_method": 0.3653,
+    "bert_results": 0.4083
+   },
+   {
+    "ckpt": "ex5000",
+    "rougeL": 0.4664,
+    "tldr": 0.5411,
+    "problem": 0.4605,
+    "contributions": 0.4598,
+    "method": 0.4309,
+    "results": 0.4612,
+    "limitations": 0.3487,
+    "bert_tldr": 0.5354,
+    "bert_problem": 0.4858,
+    "bert_contributions": 0.4186,
+    "bert_method": 0.3588,
+    "bert_results": 0.4132
+   },
+   {
+    "ckpt": "ex10000",
+    "rougeL": 0.4635,
+    "tldr": 0.5509,
+    "problem": 0.468,
+    "contributions": 0.4568,
+    "method": 0.4279,
+    "results": 0.4525,
+    "limitations": 0.3449,
+    "bert_tldr": 0.5428,
+    "bert_problem": 0.4976,
+    "bert_contributions": 0.4205,
+    "bert_method": 0.3604,
+    "bert_results": 0.409
+   },
+   {
+    "ckpt": "ex20000",
+    "rougeL": 0.479,
+    "tldr": 0.5563,
+    "problem": 0.4689,
+    "contributions": 0.4715,
+    "method": 0.4439,
+    "results": 0.4689,
+    "limitations": 0.3708,
+    "bert_tldr": 0.5498,
+    "bert_problem": 0.4985,
+    "bert_contributions": 0.4348,
+    "bert_method": 0.3749,
+    "bert_results": 0.4188
+   }
+  ]
+ },
+ "read": {
+  "A": {
+   "n": 15000,
+   "fits_whole_pct": 61.41,
+   "mean_share_of_body_seen": 0.9654,
+   "lost_papers": 5788,
+   "share_seen_when_lost_median": 0.982,
+   "share_seen_when_lost_p10_p90": [
+    0.853,
+    1.0
+   ],
+   "median_pages_whole": 11.0,
+   "median_pages_lost": 29.0
+  },
+  "B": {
+   "n": 15000,
+   "fits_whole_pct": 63.67,
+   "mean_share_of_body_seen": 0.9664,
+   "lost_papers": 5450,
+   "share_seen_when_lost_median": 0.982,
+   "share_seen_when_lost_p10_p90": [
+    0.855,
+    1.0
+   ],
+   "median_pages_whole": 11.0,
+   "median_pages_lost": 30.0
+  },
+  "C": {
+   "n": 15000,
+   "fits_whole_pct": 91.22,
+   "mean_share_of_body_seen": 0.9726,
+   "lost_papers": 1317,
+   "share_seen_when_lost_median": 0.972,
+   "share_seen_when_lost_p10_p90": [
+    0.869,
+    1.0
+   ],
+   "median_pages_whole": 14,
+   "median_pages_lost": 55
+  }
+ }
+}
